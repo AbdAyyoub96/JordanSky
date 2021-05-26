@@ -1,0 +1,177 @@
+﻿@model JordanSky.Entity.Mazr3a
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /> <br />
+<br />
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<div class="container">
+    <div class="section-title">
+        <br />
+        <br /> <br />
+        <br />
+        @if (ViewBag.Messg != null)
+        {
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                    </div>
+
+                </div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-md-12">
+                <h2> @Html.DisplayFor(model => model.Name)</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Ref No:@Html.DisplayFor(model => model.Ref_No)</h3>
+            </div>
+        </div>
+    </div>
+    <div style="border-radius:1px 3px;border-top:3px solid #ed3c0d"></div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6 mt-4 mt-lg-0">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @{
+                        var first = true;
+                    }
+                    @foreach (var item in ViewBag.Images)
+                    {
+                        <div class="carousel-item @(first?Html.Raw("active"):Html.Raw(""))">
+                            <img class="d-block w-100" src="~/Image_Facilty/@item.ImagePath" width="100" height="400" alt="">
+                        </div>
+                        first = false;
+                    }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+            <section class="contact">
+                <div class="row">
+                    <div class="col-12 section-title">
+                        <h3 class="mb-3">التفاصيل</h3>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <p>
+                            <i class="bx bxs-city"></i>
+                            <strong class="color-black">المحافظة : </strong> @Html.DisplayFor(model => model.city.Name)
+                        </p>
+                        <p>
+                            <i class="bx bx-dollar-circle"></i>
+                            <strong class="color-black">السعر : </strong> @Html.DisplayFor(model => model.Price) دينار
+                        </p>
+                        <p>
+                            <i class="bx bxs-location-plus"></i>
+                            <strong class="color-black">العنوان : </strong> @Html.DisplayFor(model => model.Location)
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <p>
+                            <i class="bx bx-font-size"></i>
+                            <strong class="color-black">المساحة : </strong> @Html.DisplayFor(model => model.Space)
+                        </p>
+                        <p>
+                            <i class="bx bi-person"></i>
+                            <strong class="color-black">الحد الأعلى للأشخاص : </strong> @Html.DisplayFor(model => model.Max_people)
+                        </p>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <p>
+                            <i class="bx bx-sleepy"></i>
+                            <strong class="color-black">عدد غرف النوم : </strong> @Html.DisplayFor(model => model.No_bedroom)
+                        </p>
+                        <p>
+                            <i class="bx bi-emoji-dizzy"></i>
+                            <strong class="color-black">عدد الأسرة : </strong> @Html.DisplayFor(model => model.No_bed)
+                        </p>
+                    </div>
+                </div>
+                <div style="border-radius:1px 3px;border-top:3px solid #ed3c0d"></div>
+                <br />
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="mb-3">الإضافات</h3>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <p>
+                            <i class="bx bx-wifi"></i>
+                            <strong class="color-black">خدمة الانترنت : </strong> @Html.DisplayFor(model => model.internet)
+                        </p>
+                        <p>
+                            <i class="bx bx-swim"></i>
+                            <strong class="color-black"> بركة السباحة : </strong> @Html.DisplayFor(model => model.pool)
+                        </p>
+                        <p>
+                            <i class="bx bx-area"></i>
+                            <strong class="color-black">مكان للشواء : </strong> @Html.DisplayFor(model => model.grill)
+                        </p>
+                        <p>
+                            <i class="bx bxs-hot"></i>
+                            <strong class="color-black">مكان للزرب : </strong> @Html.DisplayFor(model => model.Zarb)
+                        </p>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <p>
+                            <i class="bx bi-hourglass-top"></i>
+                            <strong class="color-black">تدفئة البركة : </strong> @Html.DisplayFor(model => model.pool_heating)
+                        </p>
+                        <p>
+                            <i class="bx bxs-cool"></i>
+                            <strong class="color-black">التكييف : </strong> @Html.DisplayFor(model => model.AC)
+                        </p>
+                        <p>
+                            <i class="bx bx-game"></i>
+                            <strong class="color-black">منطقة مخصصه للاطفال : </strong> @Html.DisplayFor(model => model.Children)
+                        </p>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <p>
+                            <i class="bx bx-street-view"></i>
+                            <strong class="color-black">اطلاله خارجيه : </strong> @Html.DisplayFor(model => model.View)
+                        </p>
+                        <p>
+                            <i class="bx bxs-car-garage"></i>
+                            <strong class="color-black">مكان اصطفاف السيارات : </strong> @Html.DisplayFor(model => model.Parking)
+                        </p>
+                        <p>
+                            <i class="bx bxs-ball"></i>
+                            <strong class="color-black">ملعب : </strong> @Html.DisplayFor(model => model.Playground)
+                        </p>
+                    </div>
+                    <a class="btn btn-outline-dark " href="https://goo.gl/maps/5QUDiYxtkEeZwghj7"><i class="bx bx-current-location"></i> Google Maps</a>
+                </div>
+            </section>
+        </div>
+        <div class="section pt-5">
+            <h3>الوصف</h3>
+            <p class="mt-3">@Html.DisplayFor(model => model.Description)</p>
+            <a class="btn btn-outline-success btn-lg btn-block" href="https://api.whatsapp.com/send/?phone=962798363493&text=+Ref No:@Html.DisplayFor(model => model.Ref_No)+&app_absent=0"><i class="bx bxl-whatsapp"></i> إستفسر عبر الواتساب</a>
+        </div>
+
+    </div>
+
+    <section class="contact">
+        <div class="row">
+            <a class="btn btn-danger btn-lg btn-block" id="btnSave" href="@Url.Action("Book","Facilty",new {id= ViewBag.ID })">  احجز الآن</a>
+        </div>
+    </section>
+</div>

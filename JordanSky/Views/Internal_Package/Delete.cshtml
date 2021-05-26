@@ -1,0 +1,169 @@
+﻿@model JordanSky.Entity.Internal_Package
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Internal_Package</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model._Package.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Package.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_Pakage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_Pakage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ref_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ref_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Child_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Child_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transportation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transportation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.overnight_Stay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.overnight_Stay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.overnight_Stay_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.overnight_Stay_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Food)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Food)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name_restaurant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name_restaurant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.No_Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.No_Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

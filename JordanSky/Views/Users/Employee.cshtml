@@ -1,0 +1,46 @@
+﻿@model IEnumerable<JordanSky.Entity.User>
+
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h2 class="card-title">Facilty</h2>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+            </div>
+
+        </div>
+    </div>
+    <table class="table datatable-show-all">
+        <thead>
+            <tr>
+
+                <th>Username</th>
+                <th>Password</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Username</td>
+                    <td>@item.Password</td>
+                    <td class="text-center">
+                        <div class="list-icons">
+                            <a href="#" class="btn btn-outline-dark" id=""><i class="text-blue-800    icon-pencil5 position-left" onclick="iconEdite(@item.Id)"></i></a>
+                            |
+                            <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconDelete(@item.Id)"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>

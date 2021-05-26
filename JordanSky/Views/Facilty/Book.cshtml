@@ -1,0 +1,65 @@
+﻿@model JordanSky.Entity.Booking
+@{
+    ViewBag.Title = "Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br /><br />
+
+
+
+
+
+<section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>احجز رحلتك</h2>
+        </div>
+        @using (Html.BeginForm("Book", "Facilty", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <input type="text" name="Name" class="form-control" id="txtName" placeholder="الاسم " required="">
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                        <input type="text" class="form-control" id="txtNum" name="Phone" placeholder="رقم الهاتف" required="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <span>تاريخ البدء</span>
+                        <input type="datetime-local" name="StartDate" class="form-control" id="StartDate" required="">
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                        <span>تاريخ الانتهاء</span>
+                        <input type="datetime-local" class="form-control " id="txtNum" name="EndDate" required="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <textarea rows="5" type="" name="Details" class="form-control" id="txtName" placeholder="ملاحظات" required=""></textarea>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit">احجز</button>
+                    
+                </div>
+            </div>
+        }
+        
+     
+    </div>
+</section>
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

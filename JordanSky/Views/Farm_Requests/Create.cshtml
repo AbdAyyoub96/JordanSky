@@ -1,0 +1,78 @@
+﻿@model JordanSky.Entity.Register
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br /><br />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnM7oTWJChboxL8iOMVQH1sGNKYl2jT0c&sensor=false&libraries=places"></script>
+<section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+        @if (ViewBag.Messg != null)
+        {
+            <div class=container>
+                <div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+                    <br />
+                    <strong>تم الإرسال بنجاح</strong>
+                    <p>سوف يتم التواصل معك باسرع وقت لاخذ باقي التفاصيل حول المنشأه</p>
+                </div>
+            </div>
+        }
+        <div class="section-title">
+            <h2>إشترك معنا</h2>
+        </div>
+        @using (Html.BeginForm("Create", "Farm_Requests", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <input type="text" name="Name" class="form-control" id="txtName" placeholder="اسم المالك " required="">
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <input type="text" class="form-control" id="txtNum" name="Phone" placeholder="رقم الهاتف" required="">
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <input type="text" name="Location" class="form-control" id="txtLocation" placeholder="الموقع" required>
+                        <script>
+                            function initialize() {
+                                var input = document.getElementById('txtLocation');
+                                new google.maps.places.Autocomplete(input);
+                            }
+                            google.maps.event.addDomListener(window, 'load', initialize);
+                        </script>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group mt-3">
+                        <select id="ddlCity" name="City_id" class="form-control">
+                            @foreach (var item in ViewBag.City_id)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <span>ترخيص المنشأه</span>
+                        <input type="file" name="Filelicense" class="form-control form-control-lg" id="Filelicense" placeholder="ترخيص المزرعة" required="">
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <span>صورة للنشأه</span>
+                        <input type="file" name="FilePicture" class="form-control form-control-lg" id="FilePicture" placeholder="صورة للمزرعة" required="">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-lg btn-block">طلب الإشتراك</button>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

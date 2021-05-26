@@ -1,0 +1,48 @@
+﻿@model IEnumerable<JordanSky.Entity.Image>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <section id="doctors" class="doctors section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                @if (Model.Count() == 0)
+                {
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="alert alert-danger">
+                                <strong>لا يوجد صور </strong> يرجى اضافه صور
+                            </div>
+
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <h2>@Model.FirstOrDefault().mazr.Name</h2>
+                }
+
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="~/Image_Facilty/@item.ImagePath" class="card-img-top" alt="">
+                            </div>
+                            <div class="member-info">
+                                <a href="@Url.Action("Delete","Images",new {id= item.Id } , null)" class="text-danger-800  icon-trash   position-left"> </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+</div>

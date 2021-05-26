@@ -1,0 +1,87 @@
+﻿@model JordanSky.Entity.Message
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Script_website/NewEmail.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+<br /> <br /> <br />
+<section id="contact" class="contact">
+     
+            <div class=container id="alertMsg" style="display:none">
+                <div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+                    <br />
+                    <strong>تم الإرسال بنجاح</strong>
+                    <p>نشكر تواصلك معنا </p>
+                </div>
+            </div>
+        
+
+        <div class="section-title">
+            <h2>اتصل بنا</h2>
+        </div>
+
+    <div class="container">
+
+        <div class="row mt-5">
+
+            <div class="col-lg-6">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="info-box">
+                            <i class="bx bx-map"></i>
+                            <h3>عنواننا</h3>
+                            <p>الأردن - عمان - شارع عبد الله غوشة </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box mt-4">
+                            <i class="bx bx-envelope"></i>
+                            <h3>ارسل لنا عبر البريد الإلكتروني</h3>
+                            <p><a href="mailto:info@jor-sky.com">info@jor-sky.com</a><br><a href="mailto:contact@jor-sky.com">contact@jor-sky.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box mt-4">
+                            <i class="bx bx-phone-call"></i>
+                            <h3>اتصل بنا</h3>
+                            <p>962798363493<br>962789969711</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+                <div class="php-email-form">
+                    <div class="row">
+                        <div class="col form-group mt-3 ">
+                            <input type="text" name="name" class="form-control" id="txtname" placeholder="الاسم" required>
+                        </div>
+                        <div class="col form-group mt-3">
+                            <input type="tel" class="form-control" name="txtPhone" id="txtNumber" placeholder="رقم الموبايل" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" name="txtsubject" id="txtsubject" placeholder="الموضوع" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" id="txtEmail" name="message" rows="5" placeholder="نص الرساله" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit" onclick="btnSave()">ارسال الرسالة</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

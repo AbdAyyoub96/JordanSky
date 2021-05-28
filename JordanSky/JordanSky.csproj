@@ -2311,6 +2311,10 @@
     <Compile Include="Migrations\202105261503392_initDB.designer.cs">
       <DependentUpon>202105261503392_initDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105281751211_editname.cs" />
+    <Compile Include="Migrations\202105281751211_editname.designer.cs">
+      <DependentUpon>202105281751211_editname.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_serch.cs" />
     <Compile Include="Models\vmModel.cs" />
@@ -3229,6 +3233,8 @@
     <Content Include="Views\Internal_Package\Edit.cshtml" />
     <Content Include="Views\Internal_Package\Index.cshtml" />
     <Content Include="Views\Internal_Package\Packages.cshtml" />
+    <Content Include="Views\Internal_Package\AddPackags.cshtml" />
+    <Content Include="Views\Internal_Package\AddPackages.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3243,6 +3249,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105261503392_initDB.resx">
       <DependentUpon>202105261503392_initDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105281751211_editname.resx">
+      <DependentUpon>202105281751211_editname.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

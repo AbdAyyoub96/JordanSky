@@ -23,7 +23,7 @@ namespace JordanSky.Entity
         public int overnight_Stay { get; set; } //done
         public string overnight_Stay_name { get; set; } //done
         public int Food { get; set; } //done
-        public int name_restaurant { get; set; } //done
+        public string name_restaurant { get; set; } //done
         public string No_Day { get; set; } //done
         public string StartDate { get; set; } //done
         public string EndDate { get; set; } //done

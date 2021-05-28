@@ -1,0 +1,131 @@
+﻿@model JordanSky.Entity.Internal_Package
+
+@{
+    ViewBag.Title = "AddPackages";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("AddPackages", "Internal_Package", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="card">
+    <section id="appointment" class="appointment section-bg">
+        <div class="container" data-aos="fade-up">
+            <br />
+            <div class="section-title">
+                <h2>New Packages</h2>
+            </div>
+            <div class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-md-3 form-group">
+                        @Html.EditorFor(model => model.Name_Pakage, new { htmlAttributes = new { @class = "form-control", placeholder = "Name" } })
+                        @Html.ValidationMessageFor(model => model.Name_Pakage, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-3 form-group">
+                        @Html.DropDownList("Type_id", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Type_id, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-3 form-group">
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Phone" } })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <input type="text" class="form-control" id="txtRef" name="Ref_No" value="@ViewBag.RefNo" hidden required>
+                        <label class="form-control">@ViewBag.RefNo</label>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-3 form-group">
+                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Price" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        @Html.EditorFor(model => model.Child_Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Price Children" } })
+                        @Html.ValidationMessageFor(model => model.Child_Price, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        @Html.EditorFor(model => model.Note_price, new { htmlAttributes = new { @class = "form-control", placeholder = "Note Price" } })
+                        @Html.ValidationMessageFor(model => model.Note_price, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        <select id="ddlPlayground" name="Transportation" class="form-control">
+                            <option value="-1">Select Transportation </option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4 form-group">
+                        <select id="ddlovernight_Stay" name="overnight_Stay" class="form-control">
+                            <option value="-1">Select Overnight_Stay </option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-8 form-group">
+                        @Html.EditorFor(model => model.overnight_Stay_name, new { htmlAttributes = new { @class = "form-control", placeholder = "overnight Stay name" } })
+                        @Html.ValidationMessageFor(model => model.overnight_Stay_name, "", new { @class = "text-danger" })
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <select id="ddlFood" name="Food" class="form-control">
+                            <option value="-1">Select Food</option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-8 form-group">
+                        @Html.EditorFor(model => model.name_restaurant, new { htmlAttributes = new { @class = "form-control", placeholder = "Restaurant Name" } })
+                        @Html.ValidationMessageFor(model => model.name_restaurant, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4 form-group">
+                        @Html.EditorFor(model => model.No_Day, new { htmlAttributes = new { @class = "form-control", placeholder = "Number Day" } })
+                        @Html.ValidationMessageFor(model => model.No_Day, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Start Day" } })
+                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                        @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", placeholder = "End Day" } })
+                        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input type="file" name="file" class="form-control" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <textarea class="form-control" id="txtDesc" name="Description" rows="5" placeholder="Details"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+                </div>
+        </section>
+    </div>
+                }
+

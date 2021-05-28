@@ -18,11 +18,13 @@ namespace JordanSky.Controllers
         // GET: Internal_Package
         public ActionResult Packages()
         {
-            var packages = db.Packages.Include(i => i._Package);
-            return View(packages.ToList());
+            var tempPackage = db.Packages.Include(x => x._Package).Where(s=>s.Status==1).OrderBy(x => Guid.NewGuid()).Take(8).ToList();
+            ViewBag.xxx = tempPackage;
+            ViewBag.Type = db.Type_Packges.ToList();
+
+            return View(tempPackage);
         }
 
-        // GET: Internal_Package/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,24 +40,35 @@ namespace JordanSky.Controllers
         }
 
         // GET: Internal_Package/Create
-        public ActionResult Create()
+        public ActionResult AddPackages()
         {
             ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name");
+            var ID_Row = db.Packages.OrderByDescending(o => o.Id).FirstOrDefault();
+            if(ID_Row == null)
+            {
+                ViewBag.RefNo = "TRIP-" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + "1";
+            }
+            else
+            {
+                ViewBag.RefNo = "TRIP-" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + (Convert.ToInt32(ID_Row.Id) + 1);
+            }
+           
             return View();
         }
-
-        // POST: Internal_Package/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name_Pakage,Type_id,Phone,Ref_No,Price,Picture,Child_Price,Note_price,Transportation,overnight_Stay,overnight_Stay_name,Food,name_restaurant,No_Day,StartDate,EndDate,Description,Status")] Internal_Package internal_Package)
+        public ActionResult AddPackages( Internal_Package internal_Package, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                string ImageName = System.IO.Path.GetFileName(file.FileName);
+                string physicalPathPicture = Server.MapPath("~/Image_package/" + ImageName);
+                file.SaveAs(physicalPathPicture);
+                internal_Package.Picture = ImageName;
+                internal_Package.Status = 1;
                 db.Packages.Add(internal_Package);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Packages");
             }
 
             ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name", internal_Package.Type_id);

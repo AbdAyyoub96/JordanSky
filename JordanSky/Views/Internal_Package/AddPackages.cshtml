@@ -85,30 +85,26 @@
                             <option value="1">No</option>
                         </select>
                     </div>
-
                     <div class="col-md-8 form-group">
                         @Html.EditorFor(model => model.name_restaurant, new { htmlAttributes = new { @class = "form-control", placeholder = "Restaurant Name" } })
                         @Html.ValidationMessageFor(model => model.name_restaurant, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="col-md-4 form-group">
                         @Html.EditorFor(model => model.No_Day, new { htmlAttributes = new { @class = "form-control", placeholder = "Number Day" } })
                         @Html.ValidationMessageFor(model => model.No_Day, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="col-md-4 form-group">
                         @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Start Day" } })
                         @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="col-md-4 form-group">
                         @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", placeholder = "End Day" } })
                         @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
                     </div>
-                </div>
-                <div class="row">
+                    </div>
+                    <div class="row">
                     <div class="col-md-12 form-group">
                         <input type="file" name="file" class="form-control" required />
                     </div>

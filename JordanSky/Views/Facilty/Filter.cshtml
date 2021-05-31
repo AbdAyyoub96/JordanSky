@@ -3,6 +3,8 @@
     ViewBag.Title = "Filter";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br /> <br />
+<br />
 
 <div class="container">
     <section id="appointment" class="appointment section-bg">
@@ -67,7 +69,7 @@
                     <div class="col-md-12">
 
                         <div class="alert alert-danger">
-                            <strong>نعتذر منك ! </strong> غير متوفر حاليا 
+                            <strong>نعتذر منك ! </strong> غير متوفر حاليا
                         </div>
 
                     </div>
@@ -75,37 +77,37 @@
             }
             else
             {
-            <div class="row">
-                @foreach (var item in ViewBag.tempMazra)
-                {
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                @if (item.defaultImage != null)
-                                {
-                                    <img src="~/Image_Facilty/@item.defaultImage" class="card-img-top" alt="">
-                                }
-                                else
-                                {
-                                    <img src="~/Image_Facilty/no.jpg" class="card-img-top" alt="">
-                                }
-                                <div class="social">
-                                    <a href="@Url.Action("Details", "Facilty", new { id = item.Id })">التفاصيل</a>
+                <div class="row">
+                    @foreach (var item in ViewBag.tempMazra)
+                    {
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    @if (item.defaultImage != null)
+                                    {
+                                        <img src="~/Image_Facilty/@item.defaultImage" class="card-img-top" alt="">
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Image_Facilty/no.jpg" class="card-img-top" alt="">
+                                    }
+                                    <div class="social">
+                                        <a href="@Url.Action("Details", "Facilty", new { id = item.Id })">التفاصيل</a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h3>@item.Name</h3>
+                                    <h5>@item.city.Name</h5>
+                                    <h6>@item.Location</h6>
+                                    <span>ابتداء من @item.Price دينار</span>
                                 </div>
                             </div>
-                            <div class="member-info">
-                                <h3>@item.Name</h3>
-                                <h5>@item.city.Name</h5>
-                                <h6>@item.Location</h6>
-                                <span>ابتداء من @item.Price دينار</span>
-                            </div>
                         </div>
-                    </div>
-                }
+                    }
 
 
 
-            </div>
+                </div>
             }
         </div>
     </section>

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using JordanSky.Context;
 using JordanSky.Entity;
+using JordanSky.Models;
 
 namespace JordanSky.Controllers
 {
@@ -69,7 +70,40 @@ namespace JordanSky.Controllers
             ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name", internal_Package.Type_id);
             return View(internal_Package);
         }
+        public ActionResult Filter(Filter_Package obj)
+        {
 
+            if (obj.Type == 0 && obj.Car == 0 && obj.Food == 0 && obj.Hotel == 0)
+            {
+
+                ViewBag.tempPackage = TempData.Peek("tempPackage");
+                ViewBag.Type = db.Type_Packges.ToList();
+                return View();
+            }
+            else
+            {
+                var tempPackage = new List<Internal_Package>();
+                if (obj.Type == -1 && obj.Car == -1 && obj.Food == -1 && obj.Hotel == -1)
+                {
+                    tempPackage = db.Packages.Include(x => x._Package).Where(s => s.Status == 1).OrderBy(x => Guid.NewGuid()).Take(1000).ToList();
+                    TempData["tempPackage"] = tempPackage;
+                    return Json(true);
+                }
+                else
+                {
+                    tempPackage = (from op in db.Packages
+                                  where ((obj.Type != -1) ? op.Type_id == obj.Type : true) &&
+                                    ((obj.Food != -1) ? op.Food == obj.Food : true) &&
+                                     ((obj.Hotel != -1) ? op.overnight_Stay == obj.Hotel : true) &&
+                                      ((obj.Car != -1) ? op.Transportation == obj.Car : true)
+
+                                 select op).Include(x => x._Package).Distinct().OrderBy(x => Guid.NewGuid()).Take(1000).ToList();
+                    TempData["tempPackage"] = tempPackage;
+
+                    return Json(true);
+                }
+            }
+        }
         // GET: Internal_Package/Edit/5
         public ActionResult Edit(int? id)
         {

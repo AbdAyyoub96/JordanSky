@@ -2208,6 +2208,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Script_website\Filter.js" />
+    <Content Include="Script_website\FilterPackage.js" />
     <Content Include="Script_website\NewEmail.js" />
     <Content Include="Script_website\Save_Facilty.js" />
     <Content Include="Style\css\bootstrap.css" />
@@ -2318,6 +2319,7 @@
       <DependentUpon>202105281751211_editname.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Filter_Package.cs" />
     <Compile Include="Models\Filter_serch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -3234,8 +3236,8 @@
     <Content Include="Views\Internal_Package\Edit.cshtml" />
     <Content Include="Views\Internal_Package\Index.cshtml" />
     <Content Include="Views\Internal_Package\Packages.cshtml" />
-    <Content Include="Views\Internal_Package\AddPackags.cshtml" />
     <Content Include="Views\Internal_Package\AddPackages.cshtml" />
+    <Content Include="Views\Internal_Package\Filter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

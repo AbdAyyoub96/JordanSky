@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Filter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br />
+<div class="container">
+    <section id="appointment" class="appointment section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>حدد رحلتك</h2>
+                <p>اختر ما يناسبك لتسهل عليك الإختيار</p>
+            </div>
+            <div class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-md-3 form-group mt-3">
+                        <select id="ddlType" class="form-control">
+                            <option value="-1">إختر النوع </option>
+                            @foreach (var item in ViewBag.Type)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group mt-3">
+                        <select id="ddlTran" class="form-control">
+                            <option value="-1">المواصلات </option>
+                            <option value="1">مع مواصلات </option>
+                            <option value="2">بدون موصلات </option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group mt-3">
+                        <select id="ddlRestu" class="form-control">
+                            <option value="-1">وجبات الغذاء </option>
+                            <option value="1">مع وجبات </option>
+                            <option value="2">بدون وجبات </option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group mt-3">
+                        <select id="ddlHotel" class="form-control">
+                            <option value="-1">المبيت</option>
+                            <option value="1">مع مبيت </option>
+                            <option value="2">بدون مبيت </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center"><button type="submit" onclick="btnSave()">ابحث</button></div>
+            </div>
+        </div>
+    </section>
+    <section id="doctors" class="doctors section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>خوض التجربة</h2>
+            </div>
+            @if ((ViewBag.tempPackage).Count == 0)
+            {
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="alert alert-danger">
+                            <strong>نعتذر منك ! </strong> غير متوفر حاليا
+                        </div>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+
+                <div class="row">
+                    @foreach (var item in ViewBag.tempPackage)
+                    {
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+
+                                    <img src="~/Image_package/@item.Picture" class="card-img-top" alt="">
+                                </div>
+                                <div class="member-info">
+                                    <h3>@item.Name_Pakage</h3>
+                                    <h5>@item.No_Day</h5>
+                                    <h6>@item.StartDate</h6>
+                                    <span>ابتداء من @item.Price دينار</span>
+                                    <a class="btn btn-outline-dark" href="@Url.Action("DetailsPackages", "Internal_Package", new { id = item.Id })">التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+        </div>
+    </section>
+</div>
+
+<script src="~/Script_website/FilterPackage.js"></script>

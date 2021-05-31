@@ -117,7 +117,6 @@ namespace JordanSky.Controllers
             ViewBag.Messg = TempData.Peek("Messg");
             var tempMazra = db.Mazrs.Where(m => m.Id == id).Include(x => x.city).FirstOrDefault();
             ViewBag.Images = db.Images.Where(m => m.Mazr3a_id == id);
-            
             ViewBag.Title = tempMazra.Ref_No;
             ViewBag.ID = id;
             return View(tempMazra);

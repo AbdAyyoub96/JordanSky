@@ -25,18 +25,13 @@ namespace JordanSky.Controllers
             return View(tempPackage);
         }
 
-        public ActionResult Details(int? id)
+        public ActionResult DetailsPackages(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Internal_Package internal_Package = db.Packages.Find(id);
-            if (internal_Package == null)
-            {
-                return HttpNotFound();
-            }
-            return View(internal_Package);
+            
+            var tempPackage = db.Packages.Where(m => m.Id == id).Include(x => x._Package).FirstOrDefault();
+            ViewBag.Images = db.Image_Packages.Where(m => m.Package_id == id);
+            ViewBag.ID = id;
+            return View(tempPackage);
         }
 
         // GET: Internal_Package/Create

@@ -2319,7 +2319,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_serch.cs" />
-    <Compile Include="Models\vmModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3231,7 +3230,7 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Views\Internal_Package\Create.cshtml" />
     <Content Include="Views\Internal_Package\Delete.cshtml" />
-    <Content Include="Views\Internal_Package\Details.cshtml" />
+    <Content Include="Views\Internal_Package\DetailsPackages.cshtml" />
     <Content Include="Views\Internal_Package\Edit.cshtml" />
     <Content Include="Views\Internal_Package\Index.cshtml" />
     <Content Include="Views\Internal_Package\Packages.cshtml" />

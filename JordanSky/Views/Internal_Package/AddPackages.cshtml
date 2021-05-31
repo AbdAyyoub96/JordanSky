@@ -8,7 +8,6 @@
 @using (Html.BeginForm("AddPackages", "Internal_Package", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
 <div class="card">
     <section id="appointment" class="appointment section-bg">
         <div class="container" data-aos="fade-up">
@@ -36,12 +35,10 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="col-md-3 form-group">
                         @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Price" } })
                         @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="col-md-3 form-group">
                         @Html.EditorFor(model => model.Child_Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Price Children" } })
                         @Html.ValidationMessageFor(model => model.Child_Price, "", new { @class = "text-danger" })
@@ -51,7 +48,6 @@
                         @Html.EditorFor(model => model.Note_price, new { htmlAttributes = new { @class = "form-control", placeholder = "Note Price" } })
                         @Html.ValidationMessageFor(model => model.Note_price, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="col-md-3 form-group">
                         <select id="ddlPlayground" name="Transportation" class="form-control">
                             <option value="-1">Select Transportation </option>
@@ -61,7 +57,6 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="col-md-4 form-group">
                         <select id="ddlovernight_Stay" name="overnight_Stay" class="form-control">
                             <option value="-1">Select Overnight_Stay </option>
@@ -74,8 +69,6 @@
                         @Html.EditorFor(model => model.overnight_Stay_name, new { htmlAttributes = new { @class = "form-control", placeholder = "overnight Stay name" } })
                         @Html.ValidationMessageFor(model => model.overnight_Stay_name, "", new { @class = "text-danger" })
                     </div>
-
-
                 </div>
                 <div class="row">
                     <div class="col-md-4 form-group">
@@ -123,5 +116,5 @@
                 </div>
         </section>
     </div>
-                }
+}
 

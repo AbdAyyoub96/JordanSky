@@ -31,6 +31,7 @@ namespace JordanSky.Controllers
             if (db != null)
             {
                 Session["Check_User"] = true;
+                Session["user"] = db.Name;
                 return RedirectToAction("Home", "Facilty");
             }
             else

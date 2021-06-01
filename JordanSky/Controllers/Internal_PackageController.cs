@@ -104,6 +104,25 @@ namespace JordanSky.Controllers
                 }
             }
         }
+
+        public ActionResult Book(int id)
+        {
+            ViewBag.Start = db.Startings.ToList();
+            ViewBag.ID = id;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Book(Booking_package book)
+        {
+            int x = book.Id;
+            book.Package_id = book.Id;
+            book.Id = 0;
+            book.Status = 0;
+            db.Booking_Packages.Add(book);
+            db.SaveChanges();
+            TempData["Messg"] = "Done";
+            return RedirectToAction("Details", new { ID = x });
+        }
         // GET: Internal_Package/Edit/5
         public ActionResult Edit(int? id)
         {

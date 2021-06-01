@@ -2325,6 +2325,10 @@
     <Compile Include="Migrations\202106011155548_addPriceDB.designer.cs">
       <DependentUpon>202106011155548_addPriceDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106011321411_update.cs" />
+    <Compile Include="Migrations\202106011321411_update.designer.cs">
+      <DependentUpon>202106011321411_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_Package.cs" />
     <Compile Include="Models\Filter_serch.cs" />
@@ -3246,6 +3250,7 @@
     <Content Include="Views\Internal_Package\AddPackages.cshtml" />
     <Content Include="Views\Internal_Package\Filter.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Internal_Package\Book.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3266,6 +3271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106011155548_addPriceDB.resx">
       <DependentUpon>202106011155548_addPriceDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011321411_update.resx">
+      <DependentUpon>202106011321411_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br /> <br /> <br />
+<br /><br /><br /><br />
+<section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="thumbnail">
+                    <a href="@Url.Action("Index","Facilty")">
+                        <img src="~/Image/sky2.png" alt="Lights" style="width:100%" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="thumbnail">
+                    <a href="@Url.Action("Packages","Internal_Package")">
+                        <img src="~/Image/sky1.png"  alt="Nature" style="width:100%" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

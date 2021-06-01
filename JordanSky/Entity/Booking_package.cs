@@ -13,6 +13,7 @@ namespace JordanSky.Entity
         public string Phone { get; set; }
         public int No_Pepole { get; set; }
         public int No_Child { get; set; }
+        public double TotalPrice { get; set; }
         [ForeignKey("_Locations")]
         public int Start_Id { get; set; }
         public string Details { get; set; }

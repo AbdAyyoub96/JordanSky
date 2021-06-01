@@ -2167,6 +2167,8 @@
     <Content Include="Content\Upload.css" />
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />
+    <Content Include="Image\sky1.png" />
+    <Content Include="Image\sky2.png" />
     <Content Include="Image_Facilty\1.png" />
     <Content Include="Image_Facilty\102575420_1373338689522633_4034622717635174925_n.jpg" />
     <Content Include="Image_Facilty\104167298_1373338476189321_909749866476255308_n.jpg" />
@@ -2285,6 +2287,7 @@
     <Compile Include="Controllers\BookingsController.cs" />
     <Compile Include="Controllers\FaciltyController.cs" />
     <Compile Include="Controllers\Farm_RequestsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\Internal_PackageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -2317,6 +2320,10 @@
     <Compile Include="Migrations\202105281751211_editname.cs" />
     <Compile Include="Migrations\202105281751211_editname.designer.cs">
       <DependentUpon>202105281751211_editname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011155548_addPriceDB.cs" />
+    <Compile Include="Migrations\202106011155548_addPriceDB.designer.cs">
+      <DependentUpon>202106011155548_addPriceDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_Package.cs" />
@@ -3238,6 +3245,7 @@
     <Content Include="Views\Internal_Package\Packages.cshtml" />
     <Content Include="Views\Internal_Package\AddPackages.cshtml" />
     <Content Include="Views\Internal_Package\Filter.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3255,6 +3263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105281751211_editname.resx">
       <DependentUpon>202105281751211_editname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011155548_addPriceDB.resx">
+      <DependentUpon>202106011155548_addPriceDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

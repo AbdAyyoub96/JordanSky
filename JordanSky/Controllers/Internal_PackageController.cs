@@ -28,7 +28,8 @@ namespace JordanSky.Controllers
 
         public ActionResult DetailsPackages(int id)
         {
-            
+            ViewBag.Messg = TempData.Peek("Messg");
+            ViewBag.Price = TempData.Peek("Price");
             var tempPackage = db.Packages.Where(m => m.Id == id).Include(x => x._Package).FirstOrDefault();
             ViewBag.Images = db.Image_Packages.Where(m => m.Package_id == id);
             ViewBag.ID = id;
@@ -115,13 +116,19 @@ namespace JordanSky.Controllers
         public ActionResult Book(Booking_package book)
         {
             int x = book.Id;
+            var total = db.Packages.Where(y => y.Id == book.Id).FirstOrDefault();
+            var child = total.Child_Price;
+            var person = total.Price;
+            var price = (book.No_Child * child) + (book.No_Pepole * person);
+            TempData["Price"] = price;
             book.Package_id = book.Id;
             book.Id = 0;
+            book.TotalPrice = price;
             book.Status = 0;
             db.Booking_Packages.Add(book);
             db.SaveChanges();
             TempData["Messg"] = "Done";
-            return RedirectToAction("Details", new { ID = x });
+            return RedirectToAction("DetailsPackages", new { ID = x });
         }
         // GET: Internal_Package/Edit/5
         public ActionResult Edit(int? id)

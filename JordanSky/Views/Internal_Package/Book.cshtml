@@ -15,7 +15,7 @@
         <div class="section-title">
             <h2>احجز رحلتك</h2>
         </div>
-        @using (Html.BeginForm("Book", "Facilty", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Book", "Internal_Package", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             <div class="php-email-form" data-aos="fade-up" data-aos-delay="100">

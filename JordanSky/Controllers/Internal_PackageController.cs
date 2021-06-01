@@ -115,20 +115,17 @@ namespace JordanSky.Controllers
         [HttpPost]
         public ActionResult Book(Booking_package book)
         {
-            int x = book.Id;
-            var total = db.Packages.Where(y => y.Id == book.Id).FirstOrDefault();
-            var child = total.Child_Price;
-            var person = total.Price;
-            var price = (book.No_Child * child) + (book.No_Pepole * person);
+            var total = db.Packages.Where(y => y.Id == book.Package_id).FirstOrDefault();
+            var Child = total.Child_Price;
+            var Pepole = total.Price;
+            var price = (book.No_Child * Child) + (book.No_Pepole * Pepole);
             TempData["Price"] = price;
-            book.Package_id = book.Id;
-            book.Id = 0;
             book.TotalPrice = price;
             book.Status = 0;
             db.Booking_Packages.Add(book);
             db.SaveChanges();
             TempData["Messg"] = "Done";
-            return RedirectToAction("DetailsPackages", new { ID = x });
+            return Json(true);
         }
         // GET: Internal_Package/Edit/5
         public ActionResult Edit(int? id)

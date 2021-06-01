@@ -161,14 +161,11 @@ namespace JordanSky.Controllers
         [HttpPost]
         public ActionResult Book(Booking book)
         {
-            int x = book.Id;
-            book.Mazra3a_id = book.Id;
-            book.Id = 0;
             book.Status = 0;
             db.Bookings.Add(book);
             db.SaveChanges();
-            TempData["Messg"] = "Done";            
-            return RedirectToAction("Details", new {ID =x });
+            TempData["Messg"] = "Done";
+            return Json(true);
         }
 
         public ActionResult SaveMazra3a(Mazr3a obj)

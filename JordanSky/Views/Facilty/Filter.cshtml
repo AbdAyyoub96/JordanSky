@@ -91,22 +91,17 @@
                                     {
                                         <img src="~/Image_Facilty/no.jpg" class="card-img-top" alt="">
                                     }
-                                    <div class="social">
-                                        <a href="@Url.Action("Details", "Facilty", new { id = item.Id })">التفاصيل</a>
-                                    </div>
                                 </div>
                                 <div class="member-info">
                                     <h3>@item.Name</h3>
                                     <h5>@item.city.Name</h5>
                                     <h6>@item.Location</h6>
                                     <span>ابتداء من @item.Price دينار</span>
+                                    <a class="btn btn-outline-dark" href="@Url.Action("Details","Facilty",new {id= item.Id })">التفاصيل</a>
                                 </div>
                             </div>
                         </div>
                     }
-
-
-
                 </div>
             }
         </div>

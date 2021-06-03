@@ -7,7 +7,7 @@
 
 <div class="card">
     <div class="card-header header-elements-inline">
-        <h2 class="card-title">Facilty</h2>
+        <h2 class="card-title">Employee</h2>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -18,7 +18,7 @@
     <table class="table datatable-show-all">
         <thead>
             <tr>
-
+                <th>Name</th>
                 <th>Username</th>
                 <th>Password</th>
                 <th class="text-center">Actions</th>
@@ -28,6 +28,7 @@
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>@item.Name</td>
                     <td>@item.Username</td>
                     <td>@item.Password</td>
                     <td class="text-center">

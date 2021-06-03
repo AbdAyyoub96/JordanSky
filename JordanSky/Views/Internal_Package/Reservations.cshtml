@@ -1,0 +1,57 @@
+﻿@model IEnumerable<JordanSky.Entity.Booking_package>
+
+@{
+    ViewBag.Title = "Reservations";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h2 class="card-title">New Reservations</h2>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+            </div>
+
+        </div>
+    </div>
+    <table class="table datatable-show-all">
+        <thead>
+            <tr>
+                <th>Ref_No</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Start Location</th>
+                <th>NO People</th>
+                <th>NO Child</th>
+                <th>Price</th>
+                <th>Details</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td><a href="@Url.Action("Details","Facilty",new {id= item._Package.Id })">@item._Package.Ref_No</a></td>
+                <td>@item.Name</td>
+                <td>@item.Phone</td>
+                <td>@item._Locations.Name</td>
+                <th>@item.No_Pepole</th>
+                <th>@item.No_Child</th>
+                <th>@item.TotalPrice</th>
+                <td>@item.Details</td>
+                <td class="text-center">
+                    <div class="list-icons">
+                        <a href="@Url.Action("Edit","Bookings",new {id= item.Id })" class="btn btn-outline-dark" id=""><i class="text-blue-800    icon-pencil5 position-left"></i></a>
+                        |
+                        <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconDelete(@item.Id)"></i></a>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>

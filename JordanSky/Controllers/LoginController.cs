@@ -16,12 +16,13 @@ namespace JordanSky.Controllers
        
         private JordanSkyContext eco = new JordanSkyContext();
         // GET: Login
+       
         public ActionResult Login()
         {
             Session["Check_User"] = false;
             return View();
         }
-        
+
         [HttpPost]
         public ActionResult Login([Bind(Include = "Username,Password")] User user)
         {

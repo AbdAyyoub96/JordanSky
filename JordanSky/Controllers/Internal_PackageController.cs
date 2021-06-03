@@ -210,14 +210,39 @@ namespace JordanSky.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        protected override void Dispose(bool disposing)
+        public ActionResult Reservations()
         {
-            if (disposing)
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
             {
-                db.Dispose();
+                var bookings = db.Booking_Packages.Include(b => b._Package).Include(a =>a._Locations).Where(z => z.Status == 0);
+                return View(bookings.ToList());
             }
-            base.Dispose(disposing);
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+
+        }
+
+        public ActionResult Confirmed_reservations()
+        {
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                var bookings = db.Booking_Packages.Include(b => b._Package).Include(a => a._Locations).Where(z => z.Status == 1);
+                return View(bookings.ToList());
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+
+        }
+        public ActionResult Canceled_reservations()
+        {
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                var bookings = db.Booking_Packages.Include(b => b._Package).Include(a => a._Locations).Where(z => z.Status == 2);
+                return View(bookings.ToList());
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+
         }
     }
 }

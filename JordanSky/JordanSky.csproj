@@ -106,6 +106,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\Picture.css" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\img\Logo Admin-02.png" />
     <Content Include="Content\assets\img\logo.png" />
@@ -113,6 +114,7 @@
     <Content Include="Content\assets\img\slide\slide-2.jpg" />
     <Content Include="Content\assets\img\slide\slide-3.jpg" />
     <Content Include="Content\assets\js\main.js" />
+    <Content Include="Content\assets\js\Picture.js" />
     <Content Include="Content\assets\vendor\animate.css\animate.compat.css" />
     <Content Include="Content\assets\vendor\animate.css\animate.css" />
     <Content Include="Content\assets\vendor\animate.css\animate.min.css" />
@@ -3245,12 +3247,12 @@
     <Content Include="Views\Internal_Package\Delete.cshtml" />
     <Content Include="Views\Internal_Package\DetailsPackages.cshtml" />
     <Content Include="Views\Internal_Package\Edit.cshtml" />
-    <Content Include="Views\Internal_Package\Index.cshtml" />
     <Content Include="Views\Internal_Package\Packages.cshtml" />
     <Content Include="Views\Internal_Package\AddPackages.cshtml" />
     <Content Include="Views\Internal_Package\Filter.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Internal_Package\Book.cshtml" />
+    <Content Include="Views\Internal_Package\PackagesList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

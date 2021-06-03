@@ -25,6 +25,31 @@ namespace JordanSky.Controllers
 
             return View(tempPackage);
         }
+        public ActionResult PackagesList()
+        {
+            var tempPackage = db.Packages.Include(x => x._Package).ToList();
+            ViewBag.xxx = tempPackage;
+            ViewBag.Type = db.Type_Packges.ToList();
+
+            return View(tempPackage);
+        }
+        public ActionResult UploadImage(HttpPostedFileBase file, int? Img_id)
+        {
+                if (file != null)
+                {
+                    string ImageName = System.IO.Path.GetFileName(file.FileName);
+                    string physicalPath = Server.MapPath("~/Image_package/" + ImageName);
+                    file.SaveAs(physicalPath);
+                    Image_Package image = new Image_Package();
+                    image.ImagePath = ImageName;
+                    image.Package_id = (int)Img_id;
+                    db.Image_Packages.Add(image);
+                    db.SaveChanges();
+                }
+            var tempPackage = db.Packages.Include(x => x._Package).ToList();
+            return View("PackagesList", tempPackage);
+
+        }
 
         public ActionResult DetailsPackages(int id)
         {

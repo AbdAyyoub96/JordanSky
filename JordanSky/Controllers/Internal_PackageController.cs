@@ -184,31 +184,18 @@ namespace JordanSky.Controllers
             ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name", internal_Package.Type_id);
             return View(internal_Package);
         }
-
-        // GET: Internal_Package/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                Booking_package delete = db.Booking_Packages.Find(id);
+                db.Booking_Packages.Remove(delete);
+                db.SaveChanges();
+                return Json(true);
             }
-            Internal_Package internal_Package = db.Packages.Find(id);
-            if (internal_Package == null)
-            {
-                return HttpNotFound();
-            }
-            return View(internal_Package);
-        }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
 
-        // POST: Internal_Package/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Internal_Package internal_Package = db.Packages.Find(id);
-            db.Packages.Remove(internal_Package);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
         public ActionResult Reservations()
         {
@@ -221,6 +208,19 @@ namespace JordanSky.Controllers
             return Redirect("~/Errors/error_404.html");
 
         }
+        public ActionResult Confirmed(int? id)
+        {
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                Booking_package Confirm = db.Booking_Packages.Find(id);
+                Confirm.Status = 1;
+                db.Entry(Confirm).State = EntityState.Modified;
+                db.SaveChanges();
+                return Json(true);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+        }
 
         public ActionResult Confirmed_reservations()
         {
@@ -232,6 +232,19 @@ namespace JordanSky.Controllers
             Session["Check_User"] = false;
             return Redirect("~/Errors/error_404.html");
 
+        }
+        public ActionResult Cancled(int? id)
+        {
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                Booking_package Cancle = db.Booking_Packages.Find(id);
+                Cancle.Status = 2;
+                db.Entry(Cancle).State = EntityState.Modified;
+                db.SaveChanges();
+                return Json(true);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
         }
         public ActionResult Canceled_reservations()
         {

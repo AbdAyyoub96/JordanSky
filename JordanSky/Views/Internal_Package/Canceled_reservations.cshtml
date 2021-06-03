@@ -5,78 +5,72 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Canceled_reservations</h2>
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h2 class="card-title">New Reservations</h2>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+            </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model._Locations.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model._Package.Name_Pakage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.No_Pepole)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.No_Child)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Details)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
+        </div>
+    </div>
+    <table class="table datatable-show-all">
+        <thead>
+            <tr>
+                <th>Ref_No</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Start Location</th>
+                <th>NO People</th>
+                <th>NO Child</th>
+                <th>Price</th>
+                <th>Details</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><a href="@Url.Action("Details","Facilty",new {id= item._Package.Id })">@item._Package.Ref_No</a></td>
+                    <td>@item.Name</td>
+                    <td>@item.Phone</td>
+                    <td>@item._Locations.Name</td>
+                    <th>@item.No_Pepole</th>
+                    <th>@item.No_Child</th>
+                    <th>@item.TotalPrice</th>
+                    <td>@item.Details</td>
+                    <td class="text-center">
+                        <div class="list-icons">
+                            <a href="@Url.Action("Edit","Bookings",new {id= item.Id })" class="btn btn-outline-dark" id=""><i class="text-blue-800    icon-pencil5 position-left"></i></a>
+                            |
+                            <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconDelete(@item.Id)"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    function iconDelete(idRow) {
+        $.ajax({
+            type: "post",
+            url: "/Internal_Package/Delete",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item._Locations.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item._Package.Name_Pakage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.No_Pepole)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.No_Child)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Details)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+                    window.location.href = "/Internal_Package/Canceled_reservations"
+                }
+                else {
+                    alert("Error")
+                    //$("#lblError").show();
+                }
+            },
+        });
+    };
+</script>

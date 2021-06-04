@@ -33,8 +33,9 @@ namespace JordanSky.Controllers
 
             return View(tempPackage);
         }
-        public ActionResult UploadImage(HttpPostedFileBase file, int? Img_id)
+        public ActionResult UploadImage(HttpPostedFileBase [] files, int? Img_id)
         {
+            foreach (HttpPostedFileBase file in files) 
                 if (file != null)
                 {
                     string ImageName = System.IO.Path.GetFileName(file.FileName);

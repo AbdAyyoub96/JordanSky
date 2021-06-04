@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -204,10 +205,11 @@ namespace JordanSky.Controllers
         }
 
         [HttpPost]
-        public ActionResult UploadImage(HttpPostedFileBase file, int? Img_id)
+        public ActionResult UploadImage(HttpPostedFileBase [] files, int? Img_id)
         {
             if (Convert.ToBoolean(Session["Check_User"]) == true)
             {
+                foreach(HttpPostedFileBase file in files)
                 if (file != null)
                 {
                     string ImageName = System.IO.Path.GetFileName(file.FileName);
@@ -222,11 +224,11 @@ namespace JordanSky.Controllers
                 var mazrs = db.Mazrs.Include(m => m.city).Include(m => m.product);
                 return View("Home", mazrs.ToList());
             }
-                Session["Check_User"] = false;
+            Session["Check_User"] = false;
             return Redirect("~/Errors/error_404.html");
-         
+
         }
-        
+
         public ActionResult Edit(int? id)
         {
             if (Convert.ToBoolean(Session["Check_User"]) == true)

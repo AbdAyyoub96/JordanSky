@@ -2208,8 +2208,14 @@
     <Content Include="Content\TempletAdmin\global_assets\js\polyfills\promise.min.js" />
     <Content Include="Content\TempletAdmin\global_assets\swf\datatables\flashExport.swf" />
     <Content Include="Content\Upload.css" />
+    <Content Include="Errors\error_403.html" />
+    <Content Include="Errors\error_404.html" />
+    <Content Include="Errors\error_405.html" />
+    <Content Include="Errors\error_500.html" />
+    <Content Include="Errors\error_503.html" />
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />
+    <Content Include="Image\afana.jpg" />
     <Content Include="Image\sky1.png" />
     <Content Include="Image\sky2.png" />
     <Content Include="Image_Facilty\1.png" />
@@ -2235,6 +2241,10 @@
     <Content Include="Image_Facilty\Logo Admin-02.png" />
     <Content Include="Image_Facilty\No-Image.png" />
     <Content Include="Image_Facilty\no.jpg" />
+    <Content Include="Image_package\39536082_2693169997381536_618430373856018432_n.jpg" />
+    <Content Include="Image_package\slide-1.jpg" />
+    <Content Include="Image_package\slide-2.jpg" />
+    <Content Include="Image_package\slide-3.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -3367,7 +3377,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Image_package\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105261503392_initDB.resx">

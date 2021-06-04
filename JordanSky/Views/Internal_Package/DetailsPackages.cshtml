@@ -61,47 +61,74 @@
         <div class="col-lg-6 mt-4 mt-lg-0">
             <section class="contact">
                 <div class="row">
-                    <div class="col-12 section-title">
-                        <h3 class="mb-3">التفاصيل</h3>
-                    </div>
-                    <div style="border-radius:1px 3px;border-top:3px solid #ed3c0d"></div>
-                    <br />
                     <div class="col-lg-12 col-md-6 col-sm-6">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p>
+                                    <strong class="color-black">نوع الرحلة : </strong>
+                                    @Html.DisplayFor(model => model._Package.Name)
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p>
+                                    <strong class="color-black">@Html.DisplayFor(model => model.No_Day)</strong>
+                                </p>
+                            </div>
+
+                        </div>
                         <p>
-                            <strong class="color-black">نوع الرحلة : </strong> @Html.DisplayFor(model => model._Package.Name)
+                            <strong class="color-black">
+                                @Html.DisplayFor(model => model.Description)
+                            </strong>
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p>
+                                    <i class="bx bx-dollar-circle" style="color:#ed3c0d"></i>
+                                    <strong class="color-black">السعر للشخص :</strong>
+                                    @Html.DisplayFor(model => model.Price) دينار
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p>
+                                    <i class="bx bx-dollar-circle" style="color:#ed3c0d"></i>
+                                    <strong class="color-black">السعر للأطفال :</strong>
+                                    @Html.DisplayFor(model => model.Child_Price) دينار
+                                </p>
+                            </div>
+                        </div>
+                        <p>
+                            <strong style="color:#ed3c0d">@Html.DisplayFor(model => model.Note_price)</strong>
                         </p>
                         <p>
-                            <strong class="color-black"></strong> @Html.DisplayFor(model => model.No_Day)
-                        </p>
-                        <p>
-                            <strong class="color-black"></strong> @Html.DisplayFor(model => model.Description)
-                        </p>
-                        <p>
-                            <strong class="color-black">السعر للشخص :</strong> @Html.DisplayFor(model => model.Price) دينار
-                        </p>
-                        <p>
-                            <strong class="color-black">السعر للأطفال :</strong> @Html.DisplayFor(model => model.Child_Price) دينار
-                        </p>
-                        <p>
-                            <strong class="color-black">@Html.DisplayFor(model => model.Note_price)</strong>
-                        </p>
-                        <p>
+                            <i class="bx bx-time" style="color:#ed3c0d"></i>
                             <strong class="color-black">وقت الإنطلاق :</strong>
+                            <br />
                             @Html.DisplayFor(model => model.StartDate)
                         </p>
                         <p>
+                            <i class="bx bx-time-five" style="color:#ed3c0d"></i>
                             <strong class="color-black">وقت العودة :</strong>
+                            <br />
                             @Html.DisplayFor(model => model.EndDate)
                         </p>
                         <p>
+                            <i class="bx bx-food-tag" style="color:#ed3c0d"></i>
                             <strong class="color-black">مكان الطعام :</strong>
                             <br />
                             @Html.DisplayFor(model => model.name_restaurant)
                         </p>
-                        <p>
+                        <p style="overflow-wrap: break-word">
+                            <i class="bx bx-bed" style="color:#ed3c0d"></i>
                             <strong class="color-black">مكان المبيت :</strong>
                             <br />
                             @Html.DisplayFor(model => model.overnight_Stay_name)
+                        </p>
+                        <p>
+                            <strong style="color:#ed3c0d">
+                                الرجاء مراعاة كافة التفاصيل للحجز ويرجى العلم ان اي معلومه مخالفه لتفاصيل الحجز انت تتحمل كافة المسؤولية
+
+                            </strong>
                         </p>
                         <div style="border-radius:1px 3px;border-top:3px solid #ed3c0d"></div>
                         <p>

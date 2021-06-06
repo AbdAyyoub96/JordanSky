@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace JordanSky.Entity
 {
@@ -41,6 +42,9 @@ namespace JordanSky.Entity
         public int? Type_Product_id { get; set; }
         public string Location { get; set; }
         public string Ref_No { get; set; }
+
+        [AllowHtml]
+        [UIHint("RichEditor")]
         public string Description { get; set; }
         public City city { get; set; }
         public Type_Product product { get; set; }

@@ -179,7 +179,7 @@
                         <textarea class="form-control" id="txtDesc" name="message" rows="5" placeholder="Details">@Model.Description</textarea>
                     </div>
 
-                    <div class="text-center"><button type="submit" id="btnSave" onclick="return btnSave(@Model.Id,'update')">Update</button></div>
+                    <div class="text-center"><button type="submit" id="btnSave" onclick="btnSave(@Model.Id,'update')">Update</button></div>
 
                 }
                 // --------------Save Section---------------------------------
@@ -340,7 +340,7 @@
                     <div class="form-group mt-3">
                         <textarea class="form-control" id="txtDesc" name="message" rows="5" placeholder="Details"></textarea>
                     </div>
-                    <div class="text-center"><button type="submit" id="btnSave" onclick="return btnSave('save','save')">Save</button></div>
+                    <div class="text-center"><button type="submit" id="btnSave" onclick="btnSave('save','save')">Save</button></div>
 
                 }
             </div>

@@ -2447,6 +2447,10 @@
     <Compile Include="Migrations\202106042100454_validat.designer.cs">
       <DependentUpon>202106042100454_validat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106061208475_update1.cs" />
+    <Compile Include="Migrations\202106061208475_update1.designer.cs">
+      <DependentUpon>202106061208475_update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_Package.cs" />
     <Compile Include="Models\Filter_serch.cs" />
@@ -3397,6 +3401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106042100454_validat.resx">
       <DependentUpon>202106042100454_validat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106061208475_update1.resx">
+      <DependentUpon>202106061208475_update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

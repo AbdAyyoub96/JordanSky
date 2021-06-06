@@ -2,7 +2,12 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<style>
+    pre {
+        white-space: pre-wrap; /* Since CSS 2.1 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+    }
+</style>
 
 
 
@@ -166,7 +171,7 @@
         </div>
         <div class="section pt-5">
             <h3>الوصف</h3>
-            <p class="mt-3">@Html.DisplayFor(model => model.Description)</p>
+            <p class="mt-3"style="white-space: pre-line">@Html.DisplayFor(model => model.Description)</p>
             <a class="btn btn-outline-success btn-lg btn-block" href="https://api.whatsapp.com/send/?phone=962798363493&text=+Ref No:@Html.DisplayFor(model => model.Ref_No)+&app_absent=0"><i class="bx bxl-whatsapp"></i> إستفسر عبر الواتساب</a>
         </div>
 

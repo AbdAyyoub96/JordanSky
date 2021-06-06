@@ -57,7 +57,7 @@ namespace JordanSky.Controllers
             ViewBag.Messg = TempData.Peek("Messg");
             ViewBag.Price = TempData.Peek("Price");
             var tempPackage = db.Packages.Where(m => m.Id == id).Include(x => x._Package).FirstOrDefault();
-            ViewBag.Images = db.Image_Packages.Where(m => m.Package_id == id);
+            ViewBag.Images = db.Image_Packages.Where(m => m.Package_id == id).OrderBy(x => Guid.NewGuid()).Take(6);
             ViewBag.ID = id;
             return View(tempPackage);
         }

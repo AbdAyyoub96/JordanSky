@@ -41,12 +41,12 @@
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                     <span>عدد الاشخاص</span>
-                    <input type="number" class="form-control " id="No_Pepole" >
+                    <input type="number" class="form-control " id="No_Pepole" value="2" min="2">
                     <label id="lblNum_Pepole" style="color:red;display:none"></label>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                     <span>عدد الأطفال</span>
-                    <input type="number" class="form-control " id="No_Child" >
+                    <input type="number" class="form-control " id="No_Child" value="0" min="0" >
                     <label id="lblNum_Child" style="color:red;display:none"></label>
 
                 </div>
@@ -80,18 +80,8 @@
 
         if ($("#txtName").val() == "" || $("#txtPhone").val() == "" || $("#No_Child").val() == "" || $("#No_Pepole").val() == "") {
 
-           
-            //$("#lblPhone").text("عبي العدد ");
-            //$("#lblPhone").show();
-            //$("#lblNum_Pepole").text("عبي العدد");
-            //$("#lblNum_Pepole").show();
-            ////$("#lblStart").text("skjnskmsls");
-            ////$("#lblStart").show();
-            //$("#lblNum_Child").text("skjnskmsls");
-            //$("#lblNum_Child").show();
-
             if ($("#txtName").val() == "") {
-                $("#lblName").text("عبي الاسم ");
+                $("#lblName").text(" الرجاء ادخال الإسم ");
                 $("#lblName").show();
             }
             else {
@@ -102,12 +92,12 @@
 
 
             if ($("#txtPhone").val() == "") {
-                $("#lblPhone").text("عبي الرقم ");
+                $("#lblPhone").text("الرجاء ادخال الرقم");
                 $("#lblPhone").show();
 
             }
             else if (validatePhone($("#txtPhone").val()) == false) {
-                $("#lblPhone").text("  صح يا اخو الشرموطه عبي الرقم ");
+                $("#lblPhone").text(" الرجاء إدخال الرقم بطريقة صحيحة ");
                 $("#lblPhone").show();
             }
             else {
@@ -115,26 +105,14 @@
             }
           
 
-            if ($("#No_Child").val() == "" ) {
-                $("#lblNum_Child").text("عبي عدد الاشخاص  ");
-                $("#lblNum_Child").show();
-            }
-            else if ($("#No_Child").val() < 2) {
-                $("#lblNum_Child").text("  اكبر من 2 عدد الاشخاص  ");
-                $("#lblNum_Child").show();
-
-            }
-            else {
-                $("#lblNum_Child").hide();
-            }
 
 
             if ($("#No_Pepole").val() == "") {
-                $("#lblNum_Pepole").text("عبي عدد الاشخاص  ");
+                $("#lblNum_Pepole").text("الرجاء إدخال عدد الأشخاص");
                 $("#lblNum_Pepole").show();
             }
             else if ($("#No_Pepole").val() < 2) {
-                $("#lblNum_Pepole").text("  اكبر من 2 عدد الاشخاص  ");
+                $("#lblNum_Pepole").text("عدد الأشخاص يجب ان يكون اكثر من 2");
                 $("#lblNum_Pepole").show();
 
             }
@@ -142,6 +120,19 @@
                 $("#lblNum_Pepole").hide();
             }
 
+
+            if ($("#No_Child").val() == "" ) {
+                $("#lblNum_Child").text("الرجاء إدخال عدد الأطفال");
+                $("#lblNum_Child").show();
+            }
+            else if ($("#No_Child").val() < 0) {
+                $("#lblNum_Child").text("الرجاء ادخال العدد بطريقة صحيحة");
+                $("#lblNum_Child").show();
+
+            }
+            else {
+                $("#lblNum_Child").hide();
+            }
 
 
 

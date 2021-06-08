@@ -27,31 +27,40 @@ namespace JordanSky.Controllers
         }
         public ActionResult PackagesList()
         {
-            var tempPackage = db.Packages.Include(x => x._Package).ToList();
-            ViewBag.xxx = tempPackage;
-            ViewBag.Type = db.Type_Packges.ToList();
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
 
-            return View(tempPackage);
+                var tempPackage = db.Packages.Include(x => x._Package).ToList();
+                ViewBag.xxx = tempPackage;
+                ViewBag.Type = db.Type_Packges.ToList();
+
+                return View(tempPackage);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
         }
         public ActionResult UploadImage(HttpPostedFileBase [] files, int? Img_id)
         {
-            foreach (HttpPostedFileBase file in files) 
-                if (file != null)
-                {
-                    string ImageName = System.IO.Path.GetFileName(file.FileName);
-                    string physicalPath = Server.MapPath("~/Image_package/" + ImageName);
-                    file.SaveAs(physicalPath);
-                    Image_Package image = new Image_Package();
-                    image.ImagePath = ImageName;
-                    image.Package_id = (int)Img_id;
-                    db.Image_Packages.Add(image);
-                    db.SaveChanges();
-                }
-            var tempPackage = db.Packages.Include(x => x._Package).ToList();
-            return View("PackagesList", tempPackage);
-
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                foreach (HttpPostedFileBase file in files)
+                    if (file != null)
+                    {
+                        string ImageName = System.IO.Path.GetFileName(file.FileName);
+                        string physicalPath = Server.MapPath("~/Image_package/" + ImageName);
+                        file.SaveAs(physicalPath);
+                        Image_Package image = new Image_Package();
+                        image.ImagePath = ImageName;
+                        image.Package_id = (int)Img_id;
+                        db.Image_Packages.Add(image);
+                        db.SaveChanges();
+                    }
+                var tempPackage = db.Packages.Include(x => x._Package).ToList();
+                return View("PackagesList", tempPackage);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
         }
-
         public ActionResult DetailsPackages(int id)
         {
             ViewBag.Messg = TempData.Peek("Messg");
@@ -65,37 +74,49 @@ namespace JordanSky.Controllers
         // GET: Internal_Package/Create
         public ActionResult AddPackages()
         {
-            ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name");
-            var ID_Row = db.Packages.OrderByDescending(o => o.Id).FirstOrDefault();
-            if(ID_Row == null)
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
             {
-                ViewBag.RefNo = "TRIP-" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + "1";
+                ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name");
+                var ID_Row = db.Packages.OrderByDescending(o => o.Id).FirstOrDefault();
+                if (ID_Row == null)
+                {
+                    ViewBag.RefNo = "TRIP-" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + "1";
+                }
+                else
+                {
+                    ViewBag.RefNo = "TRIP-" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + (Convert.ToInt32(ID_Row.Id) + 1);
+                }
+
+                return View();
             }
-            else
-            {
-                ViewBag.RefNo = "TRIP-" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + (Convert.ToInt32(ID_Row.Id) + 1);
-            }
-           
-            return View();
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+         
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddPackages( Internal_Package internal_Package, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
             {
-                string ImageName = System.IO.Path.GetFileName(file.FileName);
-                string physicalPathPicture = Server.MapPath("~/Image_package/" + ImageName);
-                file.SaveAs(physicalPathPicture);
-                internal_Package.Picture = ImageName;
-                internal_Package.Status = 1;
-                db.Packages.Add(internal_Package);
-                db.SaveChanges();
-                return RedirectToAction("Packages");
-            }
+                if (ModelState.IsValid)
+                {
+                    string ImageName = System.IO.Path.GetFileName(file.FileName);
+                    string physicalPathPicture = Server.MapPath("~/Image_package/" + ImageName);
+                    file.SaveAs(physicalPathPicture);
+                    internal_Package.Picture = ImageName;
+                    internal_Package.Status = 1;
+                    db.Packages.Add(internal_Package);
+                    db.SaveChanges();
+                    return RedirectToAction("Packages");
+                }
 
-            ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name", internal_Package.Type_id);
-            return View(internal_Package);
+                ViewBag.Type_id = new SelectList(db.Type_Packges, "Id", "Name", internal_Package.Type_id);
+                return View(internal_Package);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+           
         }
         public ActionResult Filter(Filter_Package obj)
         {
@@ -200,6 +221,7 @@ namespace JordanSky.Controllers
         }
         public ActionResult Reservations()
         {
+
             if (Convert.ToBoolean(Session["Check_User"]) == true)
             {
                 var bookings = db.Booking_Packages.Include(b => b._Package).Include(a =>a._Locations).Where(z => z.Status == 0);

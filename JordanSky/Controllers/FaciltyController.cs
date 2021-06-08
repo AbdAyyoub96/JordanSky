@@ -228,7 +228,6 @@ namespace JordanSky.Controllers
             return Redirect("~/Errors/error_404.html");
 
         }
-
         public ActionResult Edit(int? id)
         {
             if (Convert.ToBoolean(Session["Check_User"]) == true)

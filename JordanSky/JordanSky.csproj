@@ -2312,6 +2312,7 @@
     <Content Include="Content\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Content\Login\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -2450,6 +2451,10 @@
     <Compile Include="Migrations\202106061208475_update1.cs" />
     <Compile Include="Migrations\202106061208475_update1.designer.cs">
       <DependentUpon>202106061208475_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106111621363_updateMazra3a.cs" />
+    <Compile Include="Migrations\202106111621363_updateMazra3a.designer.cs">
+      <DependentUpon>202106111621363_updateMazra3a.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_Package.cs" />
@@ -3402,6 +3407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106061208475_update1.resx">
       <DependentUpon>202106061208475_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106111621363_updateMazra3a.resx">
+      <DependentUpon>202106111621363_updateMazra3a.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

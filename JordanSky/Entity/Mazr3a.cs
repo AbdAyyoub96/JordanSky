@@ -17,6 +17,7 @@ namespace JordanSky.Entity
         public string Phone_owner { get; set; }
         public string Name_guard { get; set; }
         public string Phone_guard { get; set; }
+        public string Maps { get; set; }
         public double Price { get; set; }
         public string Number { get; set; }
         [ForeignKey("city")]

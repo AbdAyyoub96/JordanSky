@@ -17,13 +17,12 @@
     <table class="table datatable-show-all">
         <thead>
             <tr>
-
+                <th>Ref_No</th>
                 <th>Name</th>
                 <th>Phone</th>
                 <th>StartDate</th>
                 <th>EndDate</th>
                 <th>Details</th>
-                <th>Ref_No</th>
                 <th class="text-center">Actions</th>
             </tr>
         </thead>
@@ -31,30 +30,25 @@
             @foreach (var item in Model)
             {
             <tr>
+
+                <td><a href="@Url.Action("Details","Facilty",new {id= item.mazr3.Id })">@item.mazr3.Ref_No</a></td>
                 <td>@item.Name</td>
                 <td>@item.Phone</td>
                 <td>@item.StartDate</td>
                 <td>@item.EndDate</td>
                 <td>@item.Details</td>
-                <td><a href="@Url.Action("Details","Facilty",new {id= item.mazr3.Id })">@item.mazr3.Ref_No</a></td>
                 <td class="text-center">
                     <div class="list-icons">
                         <a href="@Url.Action("Edit","Bookings",new {id= item.Id })" class="btn btn-outline-dark" id=""><i class="text-blue-800    icon-pencil5 position-left"></i></a>
                         |
-                        <a href="@Url.Action("Details","Facilty",new {id= item.Id })" class="btn btn-outline-dark"><i class="text-success-800 icon-screen-full position-left"></i></a>
+                        <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-checkmark4   position-left" onclick="iconConfirm(@item.Id)"></i></a>
                         |
-                        <a href="@Url.Action("Index","Images",new {id= item.Id })" class="btn btn-outline-dark">
-                            <i class="text-orange-800 icon-images3 position-left"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline-dark" onclick="return btnShow(@item.Id)"><i class="text-green-800 icon-attachment position-left"></i></a>
-                        |
-                        <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconDelete(@item.Id)"></i></a>
+                        <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconCancle(@item.Id)"></i></a>
+
                     </div>
                 </td>
             </tr>
             }
         </tbody>
     </table>
-
-
 </div>

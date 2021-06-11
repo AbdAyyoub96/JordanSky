@@ -42,6 +42,11 @@
     obj.Playground = $("#ddlPlayground").val();
     obj.Ref_No = $("#txtRef").val();
     obj.Type_Product_id = $("#ddlType").val();
+    obj.Name_owner = $("#txtowner").val();
+    obj.Phone_owner = $("#txtPhoneOwner").val();
+    obj.Name_guard = $("#txtguard").val();
+    obj.Phone_guard = $("#txtPhoneGuard").val();
+    obj.Maps = $("#txtMaps").val();
     debugger
     $.ajax({
         type: "Post",

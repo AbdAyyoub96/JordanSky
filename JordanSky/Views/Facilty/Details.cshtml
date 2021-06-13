@@ -25,7 +25,7 @@
                 <div class="col-md-12">
 
                     <div class="alert alert-success">
-                        <strong>تم ارسال طلبك !</strong> سوف نتواصل معك باسرع وقت لترتيب الحجز 
+                        <strong>تم ارسال طلبك !</strong> سوف نتواصل معك باسرع وقت لترتيب الحجز
                     </div>
 
                 </div>
@@ -169,17 +169,27 @@
                 </div>
             </section>
         </div>
-        <div class="section pt-5">
-            <h3>الوصف</h3>
-            <p class="mt-3"style="white-space: pre-line">@Html.DisplayFor(model => model.Description)</p>
-            <a class="btn btn-outline-success btn-lg btn-block" href="https://api.whatsapp.com/send/?phone=962798363493&text=+Ref No:@Html.DisplayFor(model => model.Ref_No)+&app_absent=0"><i class="bx bxl-whatsapp"></i> إستفسر عبر الواتساب</a>
+        <div class="section ab-c-b">
+            <strong style="color:#ed3c0d;font-size:15px">نوع النزيل : </strong>
+            <br />
+            @foreach (var item in ViewBag.Cate)
+            {
+                <strong>@item.category.Name</strong> <br />
+            }
+
+            <strong style="color:#ed3c0d;font-size:30px">الوصف : </strong>
+            <br />
+            <strong class="mt-3" style="white-space: pre-line">@Html.DisplayFor(model => model.Description)</strong>
+
         </div>
+
+        <a class="btn btn-outline-success btn-lg btn-block" href="https://api.whatsapp.com/send/?phone=962796335493&text=+Ref No:@Html.DisplayFor(model => model.Ref_No)+&app_absent=0"><i class="bx bxl-whatsapp"></i> إستفسر عبر الواتساب</a>
 
     </div>
 
-    <section class="contact">
-        <div class="row">
-            <a class="btn btn-danger btn-lg btn-block" id="btnSave" href="@Url.Action("Book","Facilty",new {id= ViewBag.ID })">  احجز الآن</a>
-        </div>
-    </section>
 </div>
+<section class="contact">
+    <div class="row">
+            <a class="btn btn-success btn-lg btn-block" id="btnSave" href="@Url.Action("Book","Facilty",new {id= ViewBag.ID })">  احجز الآن</a>
+        </div>
+</section>

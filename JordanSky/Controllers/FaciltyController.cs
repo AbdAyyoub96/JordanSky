@@ -119,6 +119,7 @@ namespace JordanSky.Controllers
             var tempMazra = db.Mazrs.Where(m => m.Id == id).Include(x => x.city).FirstOrDefault();
             ViewBag.Images = db.Images.Where(m => m.Mazr3a_id == id);
             ViewBag.Title = tempMazra.Ref_No;
+            ViewBag.Cate = db.Cate_Mazra3s.Where(m => m.Mazra3a_id == id).Include(x=>x.category);
             ViewBag.ID = id;
             return View(tempMazra);
         }

@@ -33,7 +33,7 @@ namespace JordanSky.Controllers
             ViewBag.xxx = tempMazra;
             ViewBag.City = db.Cities.Where(x=>x.mazr3As.Count()>=1).ToList();
             ViewBag.Cate = db.Categories.ToList();
-            ViewBag.Type = db.Type_s.ToList();
+            ViewBag.Type = db.Type_s.Where(x => x.mazr3As.Count() >= 1).ToList();
 
             return View(tempMazra);
         }

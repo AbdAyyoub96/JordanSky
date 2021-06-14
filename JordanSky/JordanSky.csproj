@@ -2361,17 +2361,12 @@
     <Content Include="Style\fonts\ionicons.woff" />
     <Content Include="Style\js\bootstrap.min.js.map" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Bookings\Create.cshtml" />
-    <Content Include="Views\Bookings\Delete.cshtml" />
-    <Content Include="Views\Bookings\Details.cshtml" />
     <Content Include="Views\Bookings\Edit.cshtml" />
-    <Content Include="Views\Bookings\Index.cshtml" />
     <Content Include="Views\Facilty\Add_Mazr3a.cshtml" />
     <Content Include="Views\Facilty\Book.cshtml" />
     <Content Include="Views\Facilty\Canceled_reservations.cshtml" />
     <Content Include="Views\Facilty\Confirmed_reservations.cshtml" />
     <Content Include="Views\Facilty\Details.cshtml" />
-    <Content Include="Views\Facilty\Edit.cshtml" />
     <Content Include="Views\Facilty\Filter.cshtml" />
     <Content Include="Views\Facilty\Home.cshtml" />
     <Content Include="Views\Facilty\Index.cshtml" />

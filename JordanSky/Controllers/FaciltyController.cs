@@ -285,7 +285,20 @@ namespace JordanSky.Controllers
             return Redirect("~/Errors/error_404.html");
          
         }
-        
+        public ActionResult Confirmed(int? id)
+        {
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                Booking Confirm = db.Bookings.Find(id);
+                Confirm.Status = 1;
+                db.Entry(Confirm).State = EntityState.Modified;
+                db.SaveChanges();
+                return Json(true);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+        }
+
         public ActionResult Confirmed_reservations()
         {
             if (Convert.ToBoolean(Session["Check_User"]) == true) {
@@ -295,6 +308,19 @@ namespace JordanSky.Controllers
             Session["Check_User"] = false;
             return Redirect("~/Errors/error_404.html");
          
+        }
+        public ActionResult Cancled(int? id)
+        {
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                Booking Cancle = db.Bookings.Find(id);
+                Cancle.Status = 2;
+                db.Entry(Cancle).State = EntityState.Modified;
+                db.SaveChanges();
+                return Json(true);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
         }
         public ActionResult Canceled_reservations()
         {
@@ -308,6 +334,20 @@ namespace JordanSky.Controllers
          
         }
 
-       
+        public ActionResult DeleteRev(int? id)
+        {
+            if (Convert.ToBoolean(Session["Check_User"]) == true)
+            {
+                Booking delete = db.Bookings.Find(id);
+                db.Bookings.Remove(delete);
+                db.SaveChanges();
+                return Json(true);
+            }
+            Session["Check_User"] = false;
+            return Redirect("~/Errors/error_404.html");
+
+        }
+
+
     }
 }

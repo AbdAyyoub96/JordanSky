@@ -41,9 +41,9 @@
                     <div class="list-icons">
                         <a href="@Url.Action("Edit","Bookings",new {id= item.Id })" class="btn btn-outline-dark" id=""><i class="text-blue-800    icon-pencil5 position-left"></i></a>
                         |
-                        <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-checkmark4   position-left" onclick="iconConfirm(@item.Id)"></i></a>
+                        <a onclick="iconConfirm(@item.Id)" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-checkmark4   position-left" ></i></a>
                         |
-                        <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconCancle(@item.Id)"></i></a>
+                        <a onclick="iconCancle(@item.Id)" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" ></i></a>
 
                     </div>
                 </td>
@@ -52,3 +52,49 @@
         </tbody>
     </table>
 </div>
+<script>
+    function iconConfirm(idRow) {
+        $.ajax({
+            type: "post",
+            url: "/Facilty/Confirmed",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
+
+                    window.location.href = "/Facilty/Reservations"
+                }
+                else {
+                    alert("Error")
+                }
+
+            },
+        });
+
+    };
+    function iconCancle(idRow) {
+        $.ajax({
+            type: "post",
+            url: "/Facilty/Cancled",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
+
+                    window.location.href = "/Facilty/Reservations"
+                }
+                else {
+                    alert("Error")
+                    //$("#lblError").show();
+
+
+                }
+
+            },
+        });
+
+    };
+
+</script>

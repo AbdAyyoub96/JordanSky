@@ -41,14 +41,7 @@
                         <div class="list-icons">
                             <a href="@Url.Action("Edit","Bookings",new {id= item.Id })" class="btn btn-outline-dark" id=""><i class="text-blue-800    icon-pencil5 position-left"></i></a>
                             |
-                            <a href="@Url.Action("Details","Facilty",new {id= item.Id })" class="btn btn-outline-dark"><i class="text-success-800 icon-screen-full position-left"></i></a>
-                            |
-                            <a href="@Url.Action("Index","Images",new {id= item.Id })" class="btn btn-outline-dark">
-                                <i class="text-orange-800 icon-images3 position-left"></i>
-                            </a>
-                            <a href="#" class="btn btn-outline-dark" onclick="return btnShow(@item.Id)"><i class="text-green-800 icon-attachment position-left"></i></a>
-                            |
-                            <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconDelete(@item.Id)"></i></a>
+                            <a onclick="iconCancle(@item.Id)" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left"></i></a>
                         </div>
                     </td>
                 </tr>
@@ -58,3 +51,24 @@
 
 
 </div>
+
+<script>
+    function iconCancle(idRow) {
+        $.ajax({
+            type: "post",
+            url: "/Facilty/Cancled",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
+
+                    window.location.href = "/Facilty/Confirmed_reservations"
+                }
+                else {
+                    alert("Error")
+                }
+            },
+        });
+    };
+</script>

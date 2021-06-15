@@ -20,6 +20,13 @@ namespace JordanSky.Controllers
         public ActionResult Hotel()
         {
             var temphotels = db.Hotels.Include(h => h.city).OrderBy(x => Guid.NewGuid()).Take(8).ToList();
+            if (temphotels.Any())
+            {
+                foreach (var p in temphotels)
+                {
+                    p.defaultImage = db.Image_Hotels.OrderBy(x => x.Id).FirstOrDefault(y => y.Hotel_id == p.Id)?.ImagePath;
+                }
+            }
             ViewBag.Hotel = temphotels;
             ViewBag.City = db.Cities.Where(x => x.hotels.Count() >= 1).ToList();
             ViewBag.Cate = db.Categories.ToList();
@@ -45,6 +52,13 @@ namespace JordanSky.Controllers
                 if (obj.FierstNum == 0 && obj.SecondNum == 0 && obj.rating_Value == -1 && obj.Category_Value == -1 && obj.City_value == -1)
                 {
                     temphotels = db.Hotels.Include(x => x.city).OrderBy(x => Guid.NewGuid()).Take(1000).ToList();
+                    if (temphotels.Any())
+                    {
+                        foreach (var p in temphotels)
+                        {
+                            p.defaultImage = db.Image_Hotels.OrderBy(x => x.Id).FirstOrDefault(y => y.Hotel_id == p.Id)?.ImagePath;
+                        }
+                    }
                     TempData["temphotels"] = temphotels;
                     return Json(true);
                 }
@@ -63,9 +77,16 @@ namespace JordanSky.Controllers
                                  where ((obj.rating_Value != -1) ? pg.Category_id == obj.rating_Value : true)
                                  where ((obj.City_value != -1) ? op.City_id == obj.City_value : true) &&
                                     ((obj.Category_Value != -1) ? op.Type_Hotel_id == obj.Category_Value : true) &&
-                                    (((obj.FierstNum != 0) ? (op.Price_Day >= obj.FierstNum) : (op.Price_Day >= MinValue)) && ((obj.SecondNum != 0) ? (op.Price <= obj.SecondNum) : (op.Price <= MaxValue)))
+                                    (((obj.FierstNum != 0) ? (op.Price_Day >= obj.FierstNum) : (op.Price_Day >= MinValue)) && ((obj.SecondNum != 0) ? (op.Price_Day <= obj.SecondNum) : (op.Price_Day <= MaxValue)))
 
                                  select op).Include(x => x.city).Distinct().OrderBy(x => Guid.NewGuid()).Take(1000).ToList();
+                    if (temphotels.Any())
+                    {
+                        foreach (var p in temphotels)
+                        {
+                            p.defaultImage = db.Image_Hotels.OrderBy(x => x.Id).FirstOrDefault(y => y.Hotel_id == p.Id)?.ImagePath;
+                        }
+                    }
                     TempData["temphotels"] = temphotels;
 
                     return Json(true);
@@ -101,7 +122,7 @@ namespace JordanSky.Controllers
                         ViewBag.RefNo = "HOTEL-" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + (Convert.ToInt32(ID_Row.Id) + 1);
                     }
                     ViewBag.City = db.Cities.ToList();
-                    ViewBag.Type = db.Hotels.ToList();
+                    ViewBag.Type = db.Type_Hotels.ToList();
                     ViewBag.Cate = db.Categories.ToList();
 
                     return View();
@@ -120,10 +141,8 @@ namespace JordanSky.Controllers
             return Redirect("~/Errors/error_404.html");
 
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult New_Hotel(Hotel obj)
+        
+        public ActionResult Save_Hotel(Hotel obj)
         {
             if (Convert.ToBoolean(Session["Check_User"]) == true)
             {

@@ -21,17 +21,17 @@
         obj.Id = id;
     }
     obj.Name = $("#txtName").val();
-    obj.Price = $("#txtPrice").val();
+    obj.Price_Day = $("#txtPrice").val();
     obj.Number = xy;
     obj.Maps = $("#txtLocation").val();
     obj.City_id = $("#ddlCity").val();
     obj.Description = $("#txtDesc").val();
     obj.Ref_No = $("#txtRef").val();
-    obj.Type_Product_id = $("#ddlType").val();
+    obj.Type_Hotel_id = $("#ddlType").val();
     debugger
     $.ajax({
         type: "Post",
-        url: "/Hotels/New_Hotel",
+        url: "/Hotels/Save_Hotel",
         data: obj,
         dataType: "json",
         success: function (data) {

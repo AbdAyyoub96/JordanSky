@@ -83,13 +83,20 @@
                         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                             <div class="member" data-aos="fade-up" data-aos-delay="100">
                                 <div class="member-img">
-                                    <img src="~/Image_Hotel/@item.Picture" class="card-img-top" alt="">
+                                    @if (item.defaultImage != null)
+                                    {
+                                        <img src="~/Image_Hotel/@item.defaultImage" class="card-img-top" alt="">
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Image_Facilty/no.jpg" class="card-img-top" alt="">
+                                    }
                                 </div>
                                 <div class="member-info">
                                     <h3>@item.Name</h3>
                                     <h5>@item.city.Name</h5>
                                     <span>ابتداء من @item.Price_Day دينار</span>
-                                    <a class="btn btn-outline-dark" href="@Url.Action("Details", "Facilty", new { id = item.Id })">التفاصيل</a>
+                                    <a class="btn btn-outline-dark" href="@Url.Action("DetailsHotel", "Hotels", new { id = item.Id })">التفاصيل</a>
                                 </div>
                             </div>
                         </div>

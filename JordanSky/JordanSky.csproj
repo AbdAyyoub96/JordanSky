@@ -2479,6 +2479,10 @@
     <Compile Include="Migrations\202106151202270_update2.designer.cs">
       <DependentUpon>202106151202270_update2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106151451161_codefirst.cs" />
+    <Compile Include="Migrations\202106151451161_codefirst.designer.cs">
+      <DependentUpon>202106151451161_codefirst.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_Package.cs" />
     <Compile Include="Models\Filter_serch.cs" />
@@ -3458,6 +3462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106151202270_update2.resx">
       <DependentUpon>202106151202270_update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151451161_codefirst.resx">
+      <DependentUpon>202106151451161_codefirst.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

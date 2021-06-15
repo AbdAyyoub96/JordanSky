@@ -4,9 +4,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<br /> <br /> <br />
-<br /><br /><br /><br />
-<section id="appointment" class="appointment section-bg">
+<section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active" style="background-image:url(../../Content/assets/img/slide/slide-1.jpg)">
+
+                <div class="container">
+                    <h2>مرحبا بك في  <span>سما الأردن</span></h2>
+                    <h4>تجول في جميع أنحاء الأردن بأقل الاسعار</h4>
+                    <h5>اقضي أجمل الأوقات برفقة العائلة</h5>
+
+
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url(../../Content/assets/img/slide/slide-2.jpg)">
+                <div class="container">
+                    <h2>الشاليهات والمزارع</h2>
+                    <h4>ابحث عن افخم الشاليهات والمزارع الموجوده في الأردن</h4>
+                    <h5>اقضي أجمل الأوقات برفقة الأصدقاء</h5>
+                    <a href="@Url.Action("Index","Facilty")" class="btn-get-started scrollto">المزيد ...</a>
+
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="background-image: url(../../Content/assets/img/slide/slide-3.jpg)">
+                <div class="container">
+                    <h2>الفنادق والشقق الفندقية</h2>
+                    <h4>ابحث عن افخم الفنادق والشقق الفندقية الموجوده في الأردن</h4>
+                    <h5>اقضي أجمل الأوقات برفقة العائلة</h5>
+                    <a href="@Url.Action("Hotel", "Hotels")" class="btn-get-started scrollto">المزيد ...</a>
+                </div>
+            </div>
+
+        </div>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+    </div>
+</section>
+@*<section id="appointment" class="appointment section-bg">
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -26,28 +72,28 @@
         </div>
         <br /> <br />
         @*<div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <h1 class="text-center" style="font:bold;color:#ed3c0d">جميع الخدمات بالتعاون مع شركة عفانه للسياحة والسفر</h1>
-                <div class="mt-3 text-center">
-                    <a href="https://www.facebook.com/attt.jo" class="btn btn-outline-primary"><i class="bx bxl-facebook"></i></a>
-                    <a href="http://attt-jo.com/" class="btn btn-outline-danger"><i class="bx bxl-chrome"></i></a>
-                    <a href="https://wa.me/962787998459" class="btn btn-outline-success"><i class="bx bxl-whatsapp"></i></a>
-                    <a href="tel:962787998459" class="btn btn-outline-secondary"><i class="bx bx-phone-call"></i></a>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h1 class="text-center" style="font:bold;color:#ed3c0d">جميع الخدمات بالتعاون مع شركة عفانه للسياحة والسفر</h1>
+                    <div class="mt-3 text-center">
+                        <a href="https://www.facebook.com/attt.jo" class="btn btn-outline-primary"><i class="bx bxl-facebook"></i></a>
+                        <a href="http://attt-jo.com/" class="btn btn-outline-danger"><i class="bx bxl-chrome"></i></a>
+                        <a href="https://wa.me/962787998459" class="btn btn-outline-success"><i class="bx bxl-whatsapp"></i></a>
+                        <a href="tel:962787998459" class="btn btn-outline-secondary"><i class="bx bx-phone-call"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="thumbnail">
-                    <img src="~/Image/afana.jpg" alt="Lights" style="width:100% ; border-radius:200px 200px" />
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="thumbnail">
+                        <img src="~/Image/afana.jpg" alt="Lights" style="width:100% ; border-radius:200px 200px" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-12 col-md-6 col-sm-6">
+                <div class="col-lg-12 col-md-6 col-sm-6">
 
+                </div>
             </div>
-        </div>*@
     </div>
-</section>@*<ai-chat> </ai-chat>
+</section><ai-chat> </ai-chat>
 <script>
     document.querySelector('ai-chat').setAttribute('lang', 'en');
 </script>

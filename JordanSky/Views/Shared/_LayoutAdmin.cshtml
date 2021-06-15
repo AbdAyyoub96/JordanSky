@@ -113,6 +113,21 @@
                             </ul>
                         </li>
                         <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Hotel</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Hotel">
+                                <li class="nav-item"><a href="@Url.Action("All_hotel", "Hotels")" class="nav-link active">All Hotel</a></li>
+                                <li class="nav-item"><a href="@Url.Action("New_Hotel", "Hotels")" class="nav-link">New Hotel</a></li>
+                                <li class="nav-item nav-item-submenu">
+                                    <a href="#" class="nav-link">Reservations</a>
+                                    <ul class="nav nav-group-sub" data-submenu-title="Employee">
+                                        <li class="nav-item"><a href="@Url.Action("Reservations", "Hotels")" class="nav-link active">New Reservations</a></li>
+                                        <li class="nav-item"><a href="@Url.Action("Confirmed_reservations", "Hotels")" class="nav-link">Confirmed Reservations</a></li>
+                                        <li class="nav-item"><a href="@Url.Action("Canceled_reservations", "Hotels")" class="nav-link">Canceled Reservations</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Inner Packages</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Facilty">
                                 <li class="nav-item"><a href="@Url.Action("PackagesList", "Internal_Package")" class="nav-link active">All packages</a></li>

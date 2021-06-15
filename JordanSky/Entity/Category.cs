@@ -12,5 +12,6 @@ namespace JordanSky.Entity
         public string Name { get; set; }
 
         public List<Cate_Mazra3a> cate_s { get; set; }
+        public List<Cate_Hotel> cate_Hotels { get; set; }
     }
 }

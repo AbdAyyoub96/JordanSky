@@ -2326,8 +2326,10 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Script_website\Filter.js" />
     <Content Include="Script_website\FilterPackage.js" />
+    <Content Include="Script_website\Filter_Hotel.js" />
     <Content Include="Script_website\NewEmail.js" />
     <Content Include="Script_website\Save_Facilty.js" />
+    <Content Include="Script_website\Save_Hotel.js" />
     <Content Include="Style\css\bootstrap.css" />
     <Content Include="Style\css\bootstrap.min.css" />
     <Content Include="Style\css\colors\color.css" />
@@ -2398,24 +2400,30 @@
     <Compile Include="Controllers\FaciltyController.cs" />
     <Compile Include="Controllers\Farm_RequestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelsController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\Internal_PackageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Entity\Booking.cs" />
+    <Compile Include="Entity\Booking_Hotel.cs" />
     <Compile Include="Entity\Booking_package.cs" />
     <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\Cate_Hotel.cs" />
     <Compile Include="Entity\Cate_Mazra3a.cs" />
     <Compile Include="Entity\City.cs" />
     <Compile Include="Entity\Contact.cs" />
+    <Compile Include="Entity\Hotel.cs" />
     <Compile Include="Entity\Image.cs" />
+    <Compile Include="Entity\Image_Hotel.cs" />
     <Compile Include="Entity\Image_Package.cs" />
     <Compile Include="Entity\Internal_Package.cs" />
     <Compile Include="Entity\Mazr3a.cs" />
     <Compile Include="Entity\Message.cs" />
     <Compile Include="Entity\Register.cs" />
     <Compile Include="Entity\Starting_locations.cs" />
+    <Compile Include="Entity\Type_Hotel.cs" />
     <Compile Include="Entity\Type_packge.cs" />
     <Compile Include="Entity\Type_Product.cs" />
     <Compile Include="Entity\Type_user.cs" />
@@ -2450,6 +2458,26 @@
     <Compile Include="Migrations\202106111621363_updateMazra3a.cs" />
     <Compile Include="Migrations\202106111621363_updateMazra3a.designer.cs">
       <DependentUpon>202106111621363_updateMazra3a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106151128206_hotel.cs" />
+    <Compile Include="Migrations\202106151128206_hotel.designer.cs">
+      <DependentUpon>202106151128206_hotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106151142560_update_hotel.cs" />
+    <Compile Include="Migrations\202106151142560_update_hotel.designer.cs">
+      <DependentUpon>202106151142560_update_hotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106151152051_updat_hotl.cs" />
+    <Compile Include="Migrations\202106151152051_updat_hotl.designer.cs">
+      <DependentUpon>202106151152051_updat_hotl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106151155051_update_hotl_nme.cs" />
+    <Compile Include="Migrations\202106151155051_update_hotl_nme.designer.cs">
+      <DependentUpon>202106151155051_update_hotl_nme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106151202270_update2.cs" />
+    <Compile Include="Migrations\202106151202270_update2.designer.cs">
+      <DependentUpon>202106151202270_update2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_Package.cs" />
@@ -3374,6 +3402,15 @@
     <Content Include="Views\Internal_Package\Reservations.cshtml" />
     <Content Include="Views\Internal_Package\Confirmed_reservations.cshtml" />
     <Content Include="Views\Internal_Package\Canceled_reservations.cshtml" />
+    <Content Include="Views\Hotels\Hotel.cshtml" />
+    <Content Include="Views\Hotels\Filter.cshtml" />
+    <Content Include="Views\Hotels\New_Hotel.cshtml" />
+    <Content Include="Views\Hotels\DetailsHotel.cshtml" />
+    <Content Include="Views\Hotels\All_hotel.cshtml" />
+    <Content Include="Views\Hotels\Book.cshtml" />
+    <Content Include="Views\Hotels\Reservations.cshtml" />
+    <Content Include="Views\Hotels\Confirmed_reservations.cshtml" />
+    <Content Include="Views\Hotels\Canceled_reservations.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3383,6 +3420,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image_Hotel\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105261503392_initDB.resx">
@@ -3405,6 +3443,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106111621363_updateMazra3a.resx">
       <DependentUpon>202106111621363_updateMazra3a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151128206_hotel.resx">
+      <DependentUpon>202106151128206_hotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151142560_update_hotel.resx">
+      <DependentUpon>202106151142560_update_hotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151152051_updat_hotl.resx">
+      <DependentUpon>202106151152051_updat_hotl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151155051_update_hotl_nme.resx">
+      <DependentUpon>202106151155051_update_hotl_nme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151202270_update2.resx">
+      <DependentUpon>202106151202270_update2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

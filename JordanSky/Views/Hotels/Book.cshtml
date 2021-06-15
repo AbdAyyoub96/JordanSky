@@ -1,0 +1,126 @@
+﻿@model JordanSky.Entity.Booking_Hotel
+
+@{
+    ViewBag.Title = "Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br /><br /><br /><br />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+
+<section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>احجز رحلتك</h2>
+        </div>
+        <form class="php-email-form" id="myform" method="post" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <input type="text" name="Name" class="form-control" id="txtName" placeholder="الاسم ">
+                    <label id="lblName" style="color:red;display:none"></label>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" id="txtPhone" name="Phone" placeholder="رقم الهاتف">
+                    <label id="lblPhone" style="color:red;display:none"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <span>تاريخ البدء</span>
+                    <input type="datetime-local" name="StartDate" class="form-control" id="StartDate">
+                    <label id="lblStart" style="color:red;display:none"></label>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <span>تاريخ الانتهاء</span>
+                    <input type="datetime-local" class="form-control " id="EndDate" name="EndDate" autofocus>
+                    <label id="lblEnd" style="color:red;display:none"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <textarea rows="5" type="" name="Details" class="form-control" id="txtDetails" placeholder="ملاحظات"></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" onclick="btnSave(@ViewBag.ID)">احجز الآن</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+
+    function validatePhone(phoneNumber) {
+        var phoneNumberPattern = /^\(?([0][7])\)?[-. ]?([7-9])[-. ]?([0-9]{7})$/;
+        return phoneNumberPattern.test(phoneNumber);
+    }
+
+
+    function btnSave(id) {
+        debugger;
+        if ($("#txtName").val() == "" || $("#txtPhone").val() == "" || $("#StartDate").val() == "" || $("#EndDate").val() == "") {
+            if ($("#txtName").val() == "") {
+                $("#lblName").text("الرجاء ادخال الإسم");
+                $("#lblName").show();
+            }
+            else {
+                $("#lblName").hide();
+            }
+            if ($("#txtPhone").val() == "") {
+                $("#lblPhone").text("الرجاء ادخال الرقم");
+                $("#lblPhone").show();
+            }
+            else if (validatePhone($("#txtPhone").val()) == false) {
+                $("#lblPhone").text(" الرجاء إدخال الرقم بطريقة صحيحة ");
+                $("#lblPhone").show();
+            }
+            else {
+                $("#lblPhone").hide();
+            }
+            if ($("#StartDate").val() == "") {
+                $("#lblStart").text("الرجاء تحديد التاريخ");
+                $("#lblStart").show();
+            }
+            else {
+                $("#lblStart").hide();
+            }
+            if ($("#EndDate").val() == "") {
+                $("#lblEnd").text("الرجاء تحديد التاريخ");
+                $("#lblEnd").show();
+            }
+            else {
+                $("#lblEnd").hide();
+            }
+        }
+        else {
+            var obj = {};
+            obj.Name = $("#txtName").val();
+            obj.Phone = $("#txtPhone").val();
+            obj.StartDate = $("#StartDate").val();
+            obj.EndDate = $("#EndDate").val();
+            obj.Details = $("#txtDetails").val();
+            obj.Hotel_id = id;
+            $.ajax({
+                type: "Post",
+                url: "/Hotels/Book",
+                data: obj,
+                dataType: "json",
+                success: function (data) {
+                    debugger
+                    if (data == true) {
+
+                        window.location = '@Url.Action("DetailsHotel/Id", "Hotels")'.replace("Id", id)
+                    }
+                    else {
+                        $("#lblError").show();
+
+                    }
+                },
+
+            });
+        }
+
+    }
+</script>

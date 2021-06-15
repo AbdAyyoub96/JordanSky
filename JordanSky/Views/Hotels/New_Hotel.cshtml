@@ -1,0 +1,169 @@
+﻿@model JordanSky.Entity.Hotel
+
+@{
+    ViewBag.Title = "New Hotel";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <section id="appointment" class="appointment section-bg">
+        <div class="container" data-aos="fade-up">
+            <br />
+            <div class="section-title">
+                <h2>New Hotel</h2>
+            </div>
+
+            <div class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+
+                @if (Model != null)
+                {
+                    <div class="row">
+
+                        <div class="col-md-3 form-group">
+                            <input type="text" class="form-control" id="txtName" required value="@Model.Name">
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" id="txtPrice" required value="@Model.Price_Day">
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" id="txtLocation"  required value="@Model.Maps">
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" id="txtRef" value="@Model.Ref_No" disabled required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 form-group mt-3">
+                            <select id="ddlCity" class="form-control">
+                                @foreach (var item in ViewBag.City)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group mt-3">
+                            <select id="ddlType" class="form-control">
+                                @foreach (var item in ViewBag.Type)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group mt-3">
+
+                            <div class="form-group">
+                                <div class="multiselect-native-select">
+                                    <select class="form-control multiselect-select-all" id="check" multiple="multiple" data-fouc="">
+                                        @foreach (var item in ViewBag.Cate)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+
+
+                                    </select><div class="btn-group" style="width: 100%;"><button type="button" class="multiselect dropdown-toggle btn btn-light" data-toggle="dropdown" title="Cheese, Tomatoes, Mozzarella, Mushrooms" style="width: 100%; overflow: hidden; text-overflow: ellipsis;" aria-expanded="false"><span class="multiselect-selected-text">All selected (4)</span></button><div class="multiselect-container dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);"><div class="multiselect-item dropdown-item form-check multiselect-all" tabindex="0"><label class="form-check-label"><input type="checkbox" value="multiselect-all">  Select all<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="cheese"> Cheese<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="tomatoes"> Tomatoes<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="mozarella"> Mozzarella<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="mushrooms"> Mushrooms<span class="form-check-control-indicator"></span></label></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" id="txtDesc" name="message" rows="5" placeholder="Details">@Model.Description</textarea>
+                    </div>
+
+                    <div class="text-center"><button type="submit" class="btn btn-primary" id="btnSave" onclick="btnSave(@Model.Id,'update')">Update</button></div>
+
+                }
+                // --------------Save Section---------------------------------
+                else
+                {
+
+                    <div class="row">
+
+                        <div class="col-md-3 form-group">
+                            <input type="text" class="form-control" id="txtName" placeholder="Name Hotel" required>
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" id="txtPrice" placeholder="Price" required>
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" id="txtLocation" placeholder="Location" required>
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" id="txtRef" value="@ViewBag.RefNo" disabled required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group mt-3">
+                            <select id="ddlCity" class="form-control">
+                                @foreach (var item in ViewBag.City)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group mt-3">
+                            <select id="ddlType" class="form-control">
+                                @foreach (var item in ViewBag.Type)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group mt-3">
+
+                            <div class="form-group">
+
+                                <div class="multiselect-native-select">
+                                    <select class="form-control multiselect-select-all" id="check" multiple="multiple" data-fouc="">
+                                        @foreach (var item in ViewBag.Cate)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>}
+
+
+                                    </select><div class="btn-group" style="width: 100%;"><button type="button" class="multiselect dropdown-toggle btn btn-light" data-toggle="dropdown" title="Cheese, Tomatoes, Mozzarella, Mushrooms" style="width: 100%; overflow: hidden; text-overflow: ellipsis;" aria-expanded="false"><span class="multiselect-selected-text">All selected (4)</span></button><div class="multiselect-container dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);"><div class="multiselect-item dropdown-item form-check multiselect-all" tabindex="0"><label class="form-check-label"><input type="checkbox" value="multiselect-all">  Select all<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="cheese"> Cheese<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="tomatoes"> Tomatoes<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="mozarella"> Mozzarella<span class="form-check-control-indicator"></span></label></div><div class="multiselect-item dropdown-item form-check active" tabindex="0"><label class="form-check-label"><input type="checkbox" value="mushrooms"> Mushrooms<span class="form-check-control-indicator"></span></label></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" id="txtDesc" name="message" rows="5" placeholder="Details"></textarea>
+                    </div>
+                    <div class="text-center"><button class="btn btn-primary" type="submit" id="btnSave" onclick="btnSave('save','save')">Save</button></div>
+
+                }
+            </div>
+
+        </div>
+    </section>
+    <br />
+</div>
+<script src="~/Script_website/Save_Hotel.js"></script>
+
+<script src="~/Content/TempletAdmin/global_assets/js/plugins/ui/ripple.min.js"></script>
+<!-- /core JS files -->
+<!-- Theme JS files -->
+<script src="~/Content/TempletAdmin/global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+<script src="~/Content/TempletAdmin/global_assets/js/plugins/notifications/pnotify.min.js"></script>
+<script src="~/Content/TempletAdmin/global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+<script src="~/Content/TempletAdmin/global_assets/js/demo_pages/form_multiselect.js"></script>
+<!-- /theme JS files -->
+
+
+@if (Model != null)
+{
+    <script>
+        debugger
+$(document).ready(function () {
+    $("#ddlCity").val(@Model.City_id)
+    $("#ddlType").val(@Model.Type_Hotel_id)
+    });
+    </script>
+}
+
+<script>
+                          $(".btn-group").hide();
+
+
+</script>
+

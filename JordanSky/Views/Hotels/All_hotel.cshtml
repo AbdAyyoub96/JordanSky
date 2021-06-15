@@ -1,0 +1,136 @@
+﻿@model IEnumerable<JordanSky.Entity.Hotel>
+
+@{
+    ViewBag.Title = "All_hotel";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (ViewBag.msg != null)
+{
+    <div class="alert alert-success">
+        <strong>Success!</strong> This alert box could indicate a successful or positive action.
+    </div>      }
+
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h2 class="card-title">Facilty</h2>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+            </div>
+
+        </div>
+    </div>
+    @using (Html.BeginForm("UploadImage", "Hotels", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="row" id="divUpload" style="display:none">
+            <div class="col-lg-9 mx-auto">
+                <input type="file" name="files" class="form-control" required multiple />
+                <input type="hidden" name="Img_id" id="idImg" class="form-control" required />
+
+            </div>
+            <div class="col-lg-3 mx-auto">
+                <input type="submit" value="Upload" class="btn btn-outline-danger border-0" />
+            </div>
+        </div>
+
+    }
+    <table class="table datatable-show-all">
+        <thead>
+            <tr>
+
+                <th>Ref_No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>City</th>
+                <th>Type</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Ref_No</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price_Day</td>
+                    <td>@item.city.Name</td>
+                    <td>@item.Hotel_type.Name</td>
+                    <td class="text-center">
+                        <div class="list-icons">
+                            <a class="btn btn-outline-dark" onclick="iconEdite(@item.Id)"><i class="text-blue-800    icon-pencil5 position-left"></i></a>
+                            |
+                            <a href="@Url.Action("DetailsHotel","Hotels",new {id= item.Id })" class="btn btn-outline-dark"><i class="text-success-800 icon-screen-full position-left"></i></a>
+                            |
+                            <a href="@Url.Action("Index","Images",new {id= item.Id })" class="btn btn-outline-dark">
+                                <i class="text-orange-800 icon-images3 position-left"></i>
+                            </a>
+                            <a class="btn btn-outline-dark" onclick="return btnShow(@item.Id)"><i class="text-green-800 icon-attachment position-left"></i></a>
+                            |
+                            <a class="btn btn-outline-dark" onclick="iconDelete(@item.Id)"><i class="text-danger-800  icon-trash   position-left"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
+<script>
+
+    function btnShow(id) {
+        debugger
+
+        $("#divUpload").show();
+        $("#idImg").val(id);
+
+    }
+
+    function iconEdite(idRow) {
+        debugger
+        $.ajax({
+            type: "Get",
+            url: "/Hotels/Edit",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
+
+                    window.location.href = "/Hotels/New_Hotel?dist= +true";
+                }
+                else {
+                    alert("Error")
+                    //$("#lblError").show();
+
+
+                }
+
+            },
+        });
+    };
+    function iconDelete(idRow) {
+        $.ajax({
+            type: "Get",
+            url: "/Hotels/Delete",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
+
+                    window.location.href = "/Hotels/All_hotel?dist= +true";
+                }
+                else {
+                    alert("Error")
+                    //$("#lblError").show();
+                }
+
+            },
+        });
+
+    };
+</script>

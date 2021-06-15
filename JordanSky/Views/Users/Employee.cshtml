@@ -18,6 +18,7 @@
     <table class="table datatable-show-all">
         <thead>
             <tr>
+
                 <th>Name</th>
                 <th>Username</th>
                 <th>Password</th>
@@ -27,21 +28,19 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Username</td>
-                    <td>@item.Password</td>
-                    <td class="text-center">
-                        <div class="list-icons">
-                            <a href="#" class="btn btn-outline-dark" id=""><i class="text-blue-800    icon-pencil5 position-left" onclick="iconEdite(@item.Id)"></i></a>
-                            |
-                            <a href="#" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left" onclick="iconDelete(@item.Id)"></i></a>
-                        </div>
-                    </td>
-                </tr>
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Username</td>
+                <td>@item.Password</td>
+                <td class="text-center">
+                    <div class="list-icons">
+                        <a class="btn btn-outline-dark" href="@Url.Action("Edit","Users",new {id= item.Id })"><i class="text-blue-800    icon-pencil5 position-left"></i></a>
+                        |
+                        <a class="btn btn-outline-dark" href="@Url.Action("Delete","Users",new {id= item.Id })"><i class="text-danger-800  icon-trash   position-left"></i></a>
+                    </div>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
-
-
 </div>

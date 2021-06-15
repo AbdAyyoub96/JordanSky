@@ -1,0 +1,98 @@
+﻿@model IEnumerable<JordanSky.Entity.Booking_Hotel>
+
+@{
+    ViewBag.Title = "Reservations";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h2 class="card-title">New Reservations</h2>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+            </div>
+        </div>
+    </div>
+    <table class="table datatable-show-all">
+        <thead>
+            <tr>
+                <th>Ref_No</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Details</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td><a href="@Url.Action("DetailsHotel","Hotels",new {id= item.hotel.Id })">@item.hotel.Ref_No</a></td>
+                    <td>@item.Name</td>
+                    <td>@item.Phone</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndDate</td>
+                    <td>@item.Details</td>
+                    <td class="text-center">
+                        <div class="list-icons">
+                            <a onclick="iconConfirm(@item.Id)" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-checkmark4   position-left"></i></a>
+                            |
+                            <a onclick="iconCancle(@item.Id)" class="btn btn-outline-dark" id=""><i class="text-danger-800  icon-trash   position-left"></i></a>
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    function iconConfirm(idRow) {
+        $.ajax({
+            type: "post",
+            url: "/Hotels/Confirmed",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
+
+                    window.location.href = "/Hotels/Reservations"
+                }
+                else {
+                    alert("Error")
+                }
+
+            },
+        });
+
+    };
+    function iconCancle(idRow) {
+        $.ajax({
+            type: "post",
+            url: "/Hotels/Cancled",
+            data: { 'ID': idRow },
+            dataType: "json",
+            success: function (data) {
+                debugger
+                if (data == true) {
+
+                    window.location.href = "/Hotels/Reservations"
+                }
+                else {
+                    alert("Error")
+                    //$("#lblError").show();
+
+
+                }
+
+            },
+        });
+
+    };
+
+</script>

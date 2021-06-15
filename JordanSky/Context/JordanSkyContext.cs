@@ -31,6 +31,10 @@ namespace JordanSky.Context
         public virtual DbSet<Starting_locations> Startings { get; set; }
         public virtual DbSet<Image_Package> Image_Packages { get; set; }
         public virtual DbSet<Type_packge> Type_Packges{ get; set; }
-
+        public virtual DbSet<Hotel> Hotels  { get; set; }
+        public virtual DbSet<Type_Hotel> Type_Hotels   { get; set; }
+        public virtual DbSet<Image_Hotel> Image_Hotels { get; set; }
+        public virtual DbSet<Booking_Hotel> Booking_Hotels { get; set; }
+        public virtual DbSet<Cate_Hotel> Cate_Hotels { get; set; }
     }
 }

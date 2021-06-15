@@ -42,11 +42,10 @@ namespace JordanSky.Controllers
             
             if (obj.City_value==0 && obj.FierstNum==0 && obj.SecondNum==0 && obj.rating_Value==0 && obj.Category_Value==0)
             {
-               
                 ViewBag.tempMazra = TempData.Peek("tempMazra");
                 ViewBag.City = db.Cities.Where(x => x.mazr3As.Count() >= 1).ToList();
                 ViewBag.Cate = db.Categories.ToList();
-                ViewBag.Type = db.Type_s.ToList();
+                ViewBag.Type = db.Type_s.Where(x => x.mazr3As.Count() >= 1).ToList();
                 return View();
             }
             else
@@ -107,9 +106,6 @@ namespace JordanSky.Controllers
             }
                 Session["Check_User"] = false;
             return Redirect("~/Errors/error_404.html");
-
-           
-           
         }
 
         // GET: Mazr3a/Details/5

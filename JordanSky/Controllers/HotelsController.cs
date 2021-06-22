@@ -131,7 +131,7 @@ namespace JordanSky.Controllers
                 {
                     ViewBag.Status = "Update";
                     ViewBag.City = db.Cities.ToList();
-                    ViewBag.Type = db.Hotels.ToList();
+                    ViewBag.Type = db.Type_Hotels.ToList();
                     ViewBag.Cate = db.Categories.ToList();
                     var obj = TempData.Peek("DataHotel");
                     return View(obj);

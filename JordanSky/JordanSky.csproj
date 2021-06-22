@@ -2216,11 +2216,15 @@
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />
     <Content Include="Image\afana.jpg" />
+    <Content Include="Image\pic.jpg" />
+    <Content Include="Image\pic1.jpg" />
     <Content Include="Image\sky1.png" />
     <Content Include="Image\sky2.png" />
     <Content Include="Image_Facilty\1.png" />
     <Content Include="Image_Facilty\102575420_1373338689522633_4034622717635174925_n.jpg" />
+    <Content Include="Image_Facilty\102769336_1373338926189276_5284268781302569239_n.jpg" />
     <Content Include="Image_Facilty\104167298_1373338476189321_909749866476255308_n.jpg" />
+    <Content Include="Image_Facilty\104200925_1373338762855959_2340351289249892148_n.jpg" />
     <Content Include="Image_Facilty\104207997_1373338942855941_5346791829766319616_n.jpg" />
     <Content Include="Image_Facilty\104224826_1373338982855937_55358831768811178_n.jpg" />
     <Content Include="Image_Facilty\104239266_1373338792855956_7813971114430196274_n.jpg" />
@@ -2228,20 +2232,181 @@
     <Content Include="Image_Facilty\104332896_1373338782855957_3374971899802821573_n.jpg" />
     <Content Include="Image_Facilty\134496426_3517516801662588_1590363122340796080_n.jpg" />
     <Content Include="Image_Facilty\172029347_1621795631351297_2225906485340457213_n.jpg" />
+    <Content Include="Image_Facilty\190250387_119647143633688_4899491993419431414_n.jpg" />
     <Content Include="Image_Facilty\2.png" />
+    <Content Include="Image_Facilty\253fa2891512d4942080f9291d1aab72.jpg" />
     <Content Include="Image_Facilty\39536082_2693169997381536_618430373856018432_n.jpg" />
     <Content Include="Image_Facilty\39932548_2693170520714817_562892993565032448_n.jpg" />
     <Content Include="Image_Facilty\82541903_1373338656189303_6322592736479869167_n.jpg" />
+    <Content Include="Image_Facilty\82927358_1373338896189279_3218515829651248734_n.jpg" />
+    <Content Include="Image_Facilty\83778756_1373338566189312_3160361787101190618_n.jpg" />
+    <Content Include="Image_Facilty\download.jfif" />
     <Content Include="Image_Facilty\download.jpg" />
     <Content Include="Image_Facilty\f6656aa6fdb6b8f905dea0bcc2d71dd8.gif" />
     <Content Include="Image_Facilty\img-11.jpg" />
     <Content Include="Image_Facilty\img-12.jpg" />
     <Content Include="Image_Facilty\img-13.jpg" />
     <Content Include="Image_Facilty\img-14.jpg" />
+    <Content Include="Image_Facilty\inbound2389336220914583610.jpg" />
+    <Content Include="Image_Facilty\inbound4401998398368001866.jpg" />
+    <Content Include="Image_Facilty\inbound5751156584836183914.jpg" />
+    <Content Include="Image_Facilty\inbound7608664828433736198.jpg" />
     <Content Include="Image_Facilty\Logo Admin-02.png" />
     <Content Include="Image_Facilty\No-Image.png" />
     <Content Include="Image_Facilty\no.jpg" />
+    <Content Include="Image_Facilty\sky1.png" />
+    <Content Include="Image_Facilty\sky2.png" />
+    <Content Include="Image_Facilty\slide-1.jpg" />
+    <Content Include="Image_Facilty\slide-1.png" />
+    <Content Include="Image_Facilty\slide-2.jpg" />
+    <Content Include="Image_Facilty\slide-2.png" />
+    <Content Include="Image_Facilty\slide-3.jpg" />
+    <Content Include="Image_Facilty\slide-3.png" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.46 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.46 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.46 AM %283%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.46 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.47 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.47 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.47 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.48 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.48 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.40.48 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.51.57 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.51.58 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.51.58 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.51.58 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.51.59 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.51.59 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.51.59 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.52.00 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.52.00 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.52.00 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.10 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.10 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.10 AM %283%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.10 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.11 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.11 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.11 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.12 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.12 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.12 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.13 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.13 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.13 AM %283%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.13 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.14 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.14 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.55.14 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.54 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.54 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.54 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.55 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.55 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.55 AM %283%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.55 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.56 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.56 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.56 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.57 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.57 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.57 AM %283%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 2.58.57 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.41 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.42 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.42 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.42 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.43 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.43 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.44 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.44 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.45 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.45 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.46 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.46 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.46 AM %283%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.46 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.47 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.47 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.47 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.48 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.48 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.49 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.49 AM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.49 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.50 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.51 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.51 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.52 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.52 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.53 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.54 AM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-13 at 3.01.54 AM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.15 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.20 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.21 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.21 PM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.21 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.22 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.22 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.23 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.23 PM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.23 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.24 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.24 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.25 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.25 PM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.25 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.26 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.26 PM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.26 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.27 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.27 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.28 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.28 PM %282%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.28 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.29 PM %281%29.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.29 PM.jpeg" />
+    <Content Include="Image_Facilty\WhatsApp Image 2021-06-14 at 2.01.30 PM.jpeg" />
+    <Content Include="Image_Hotel\2004190000017rep5B098_Z_550_412_R5_Q70_D.jpg" />
+    <Content Include="Image_Hotel\270499290.jpg" />
+    <Content Include="Image_Hotel\3.jpg" />
+    <Content Include="Image_Hotel\30444e36d860346830d106b11d7293947580ff1a.jpeg" />
+    <Content Include="Image_Hotel\338c899bc8fd3d3c3742c4cf59027b24.jpg" />
+    <Content Include="Image_Hotel\9156e013_z.jpg" />
+    <Content Include="Image_Hotel\Aqaba-01_AQJ1_Spa-Couple-Treatment-Room_High-Res_356.jpg" />
+    <Content Include="Image_Hotel\c5d84d2d-c060-4a39-869a-964c839706c1.jpg" />
+    <Content Include="Image_Hotel\download.jpg" />
+    <Content Include="Image_Hotel\DSC_9307-1440x1000.jpg" />
+    <Content Include="Image_Hotel\DSC_9450-Copy-1024x683.jpg" />
+    <Content Include="Image_Hotel\e08d6823-33fb-41cc-8d4b-054d36ddb2ec.jpg" />
+    <Content Include="Image_Hotel\exterior.jpg" />
+    <Content Include="Image_Hotel\ice-133392-71790007_3XL-903640.jpg" />
+    <Content Include="Image_Hotel\intercontinental-aqaba-4008417344-2x1.jpg" />
+    <Content Include="Image_Hotel\intercontinental-aqaba-4009096262-2x1.jpg" />
+    <Content Include="Image_Hotel\movenpick-resort-spa-tala-bay-aqaba-hotel-5506727.jpg" />
+    <Content Include="Image_Hotel\overview-beach-pool.jpg" />
+    <Content Include="Image_Hotel\regency-suite-terrace.jpg" />
+    <Content Include="Image_Hotel\tala-bay-vacation-homes %281%29.jpg" />
+    <Content Include="Image_Hotel\tala-bay-vacation-homes.jpg" />
+    <Content Include="Image_Hotel\Tala_Bayxxxxxxx_i109193_08.jpg" />
+    <Content Include="Image_Hotel\View-from-top.jpg" />
+    <Content Include="Image_Hotel\vista-lounge-bar-terrace.jpg" />
+    <Content Include="Image_package\104167298_1373338476189321_909749866476255308_n.jpg" />
+    <Content Include="Image_package\104200925_1373338762855959_2340351289249892148_n.jpg" />
+    <Content Include="Image_package\104207997_1373338942855941_5346791829766319616_n.jpg" />
+    <Content Include="Image_package\104224826_1373338982855937_55358831768811178_n.jpg" />
+    <Content Include="Image_package\104239266_1373338792855956_7813971114430196274_n.jpg" />
+    <Content Include="Image_package\104329204_1373338879522614_833655874645749176_n.jpg" />
+    <Content Include="Image_package\104332896_1373338782855957_3374971899802821573_n.jpg" />
+    <Content Include="Image_package\134496426_3517516801662588_1590363122340796080_n.jpg" />
+    <Content Include="Image_package\172029347_1621795631351297_2225906485340457213_n.jpg" />
     <Content Include="Image_package\39536082_2693169997381536_618430373856018432_n.jpg" />
+    <Content Include="Image_package\39753029_2693169947381541_3620748518194413568_n.jpg" />
+    <Content Include="Image_package\39932548_2693170520714817_562892993565032448_n.jpg" />
+    <Content Include="Image_package\img-11.jpg" />
+    <Content Include="Image_package\img-13.jpg" />
     <Content Include="Image_package\slide-1.jpg" />
     <Content Include="Image_package\slide-2.jpg" />
     <Content Include="Image_package\slide-3.jpg" />
@@ -2463,25 +2628,9 @@
     <Compile Include="Migrations\202106151128206_hotel.designer.cs">
       <DependentUpon>202106151128206_hotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106151142560_update_hotel.cs" />
-    <Compile Include="Migrations\202106151142560_update_hotel.designer.cs">
-      <DependentUpon>202106151142560_update_hotel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151152051_updat_hotl.cs" />
-    <Compile Include="Migrations\202106151152051_updat_hotl.designer.cs">
-      <DependentUpon>202106151152051_updat_hotl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151155051_update_hotl_nme.cs" />
-    <Compile Include="Migrations\202106151155051_update_hotl_nme.designer.cs">
-      <DependentUpon>202106151155051_update_hotl_nme.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151202270_update2.cs" />
-    <Compile Include="Migrations\202106151202270_update2.designer.cs">
-      <DependentUpon>202106151202270_update2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151451161_codefirst.cs" />
-    <Compile Include="Migrations\202106151451161_codefirst.designer.cs">
-      <DependentUpon>202106151451161_codefirst.cs</DependentUpon>
+    <Compile Include="Migrations\202106152009334_HotelDB.cs" />
+    <Compile Include="Migrations\202106152009334_HotelDB.designer.cs">
+      <DependentUpon>202106152009334_HotelDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Filter_Package.cs" />
@@ -3424,7 +3573,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Image_Hotel\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105261503392_initDB.resx">
@@ -3451,20 +3599,8 @@
     <EmbeddedResource Include="Migrations\202106151128206_hotel.resx">
       <DependentUpon>202106151128206_hotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151142560_update_hotel.resx">
-      <DependentUpon>202106151142560_update_hotel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151152051_updat_hotl.resx">
-      <DependentUpon>202106151152051_updat_hotl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151155051_update_hotl_nme.resx">
-      <DependentUpon>202106151155051_update_hotl_nme.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151202270_update2.resx">
-      <DependentUpon>202106151202270_update2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151451161_codefirst.resx">
-      <DependentUpon>202106151451161_codefirst.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106152009334_HotelDB.resx">
+      <DependentUpon>202106152009334_HotelDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

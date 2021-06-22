@@ -8,10 +8,11 @@
         word-wrap: break-word; /* Internet Explorer 5.5+ */
     }
 </style>
-
-
-
-
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="~/Content/assets/css/Picture.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 <br /> <br />
 <br />
 <div class="container">
@@ -46,34 +47,10 @@
     <br />
     <div class="row">
         <div class="col-lg-6 mt-4 mt-lg-0">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    @{
-                        var first = true;
-                    }
-                    @foreach (var item in ViewBag.Images)
-                    {
-                        <div class="carousel-item @(first?Html.Raw("active"):Html.Raw(""))">
-                            <img class="d-block w-100" src="~/Image_Facilty/@item.ImagePath" width="100" height="400" alt="">
-                        </div>
-                        first = false;
-                    }
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <div class="col-lg-6 mt-4 mt-lg-0">
             <section class="contact">
                 <div class="row">
                     <div class="col-12 section-title">
-                        <h3 class="mb-3">التفاصيل</h3>
+                        <h3 class="mb-3" style="color:#ed3c0d">التفاصيل</h3>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <p>
@@ -115,7 +92,7 @@
                 <br />
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="mb-3">الإضافات</h3>
+                        <h3 class="mb-3" style="color:#ed3c0d">الإضافات</h3>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <p>
@@ -165,31 +142,48 @@
                             <strong class="color-black">ملعب : </strong> @Html.DisplayFor(model => model.Playground)
                         </p>
                     </div>
+                    <div class="col-12">
+                        <h3 class="mb-3" style="color:#ed3c0d">نوع النزيل </h3>
+                    </div>
+                    @foreach (var item in ViewBag.Cate)
+                    {
+                        <strong>@item.category.Name</strong> <br />
+                    }
+                    <div class="section ab-c-b">
+                        @if (Model.Description != null)
+                        {
+                            <strong style="color:#ed3c0d;font-size:30px">الوصف : </strong>
+                            <br />
+                            <strong class="mt-3" style="white-space: pre-line">@Html.DisplayFor(model => model.Description)</strong>
+                        }
+                    </div>
+
                     <a class="btn btn-outline-dark " href="@Html.DisplayFor(model => model.Maps)"><i class="bx bx-current-location"></i> Google Maps</a>
                 </div>
             </section>
         </div>
-        <div class="section ab-c-b">
-            <strong style="color:#ed3c0d;font-size:15px">نوع النزيل : </strong>
-            <br />
-            @foreach (var item in ViewBag.Cate)
-            {
-                <strong>@item.category.Name</strong> <br />
-            }
+        <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="row">
+                    @foreach (var item in ViewBag.Images)
+                    {
 
-            <strong style="color:#ed3c0d;font-size:30px">الوصف : </strong>
-            <br />
-            <strong class="mt-3" style="white-space: pre-line">@Html.DisplayFor(model => model.Description)</strong>
-
+                        <div class="col-sm-3 col-md-3 col-lg-6 item">
+                            <a href="~/Image_Facilty/@item.ImagePath" data-lightbox="photos">
+                                <img class="img-fluid" src="~/Image_Facilty/@item.ImagePath">
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
-
-        <a class="btn btn-outline-success btn-lg btn-block" href="https://api.whatsapp.com/send/?phone=962796335493&text=+Ref No:@Html.DisplayFor(model => model.Ref_No)+&app_absent=0"><i class="bx bxl-whatsapp"></i> إستفسر عبر الواتساب</a>
-
+        <a class="btn btn-outline-success btn-lg btn-block" href="https://api.whatsapp.com/send/?phone=962796335493&text=+Ref
+           No:@Html.DisplayFor(model => model.Ref_No)+&app_absent=0"><i class="bx bxl-whatsapp"></i>إحجز عبر الواتساب</a>
     </div>
 
 </div>
 <section class="contact">
     <div class="row">
-            <a class="btn btn-success btn-lg btn-block" id="btnSave" href="@Url.Action("Book","Facilty",new {id= ViewBag.ID })">  احجز الآن</a>
-        </div>
+        <a class="btn btn-success btn-lg btn-block" id="btnSave" href="@Url.Action("Book","Facilty",new {id= ViewBag.ID })">  احجز الآن</a>
+    </div>
 </section>

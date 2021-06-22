@@ -21,7 +21,6 @@
     <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="~/Content/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="~/Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="~/Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <script src="~/Scripts/jquery-3.6.0.js"></script>
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
@@ -49,16 +48,16 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-baseline">
-            <a href="@Url.Action( "Index","Facilty")" class="logo me-auto"><img src="~/Content/assets/img/logo.png" style="position: relative; max-width: 90px !important;" alt=""></a>
+            <a href="@Url.Action( "Home","Home")" class="logo me-auto"><img src="~/Content/assets/img/logo.png" style="position: relative; max-width: 90px !important;" alt=""></a>
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <br />
                 <ul>
-                    <li><a class="nav-link scrollto" href="@Url.Action( "Index","Facilty")"> الصفحة الرئيسية</a></li>
+                    <li><a class="nav-link scrollto" href="@Url.Action( "Home","Home")"> الصفحة الرئيسية</a></li>
                     <li class="dropdown">
             <a href="#"><span>خدماتنا</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="@Url.Action("Index", "Facilty")">المزارع والشاليهات</a></li>
-                <li><a href="@Url.Action("Hotel", "Hotels")">الفنادق والشقق الفندقية</a></li>
+                <li><a href="@Url.Action("Index", "Facilty")">الشاليهات و المزارع</a></li>
+                <li><a href="@Url.Action("Hotel", "Hotels")">الفنادق والمخيمات</a></li>
             </ul>
         </li>
                     <li><a class="nav-link scrollto" href="@Url.Action( "Send","Messages")">إتصل بنا</a></li>

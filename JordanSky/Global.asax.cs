@@ -29,10 +29,10 @@ namespace JordanSky
                 switch (httpException.GetHttpCode())
                 {
                     case 404:
-                       action = "error_404.html";
+                        action = "error_404.html";
                         break;
                     case 403:
-                       action = "error_403.html";
+                        action = "error_403.html";
                         break;
                     case 500:
                         action = "error_500.html";
@@ -44,14 +44,14 @@ namespace JordanSky
                         action = "error_503.html";
                         break;
                 }
-                
+
                 Server.ClearError();
 
                 Response.Redirect(String.Format("~/Errors/{0}", action));
             }
             else
             {
-               Response.Redirect(String.Format("~/Errors/error_503.html"));
+                Response.Redirect(String.Format("~/Errors/error_503.html"));
             }
         }
     }
